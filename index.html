@@ -76,6 +76,14 @@
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
 
+  <div class="consent" id="consent" role="region" aria-label="Cookie choices" hidden>
+    <p>We use Google Analytics to see how this page is used. It only runs if you accept.</p>
+    <div class="consent__actions">
+      <button type="button" class="btn btn--secondary" id="consent-accept">Accept</button>
+      <button type="button" class="btn btn--secondary" id="consent-decline">Decline</button>
+    </div>
+  </div>
+
   <header class="hero">
     <p class="logo">
       <span class="logo__line">Pink Rodeo</span>
@@ -97,7 +105,7 @@
 
     <section class="section" aria-labelledby="book-heading">
       <h2 id="book-heading">How to book</h2>
-      <p>Federica tattoos by appointment in North London, and books fine line tattoos in London on Wednesdays, Fridays and Saturdays only. Send a message on Instagram to get started.</p>
+      <p>Federica works by appointment in North London, on Wednesdays, Fridays and Saturdays only. To book a fine line tattoo in London, send a message on Instagram.</p>
       <dl class="frame booking">
         <div class="booking__row">
           <dt>Days</dt>
@@ -124,20 +132,13 @@
 
     <section class="privacy" aria-labelledby="privacy-heading">
       <h2 id="privacy-heading">Privacy</h2>
-      <p>This site uses Google Analytics to count visits and see which links people use, but only if you choose Accept. Until then nothing is sent to Google Analytics and no analytics cookies are set. The site has no forms and does not ask for your name or contact details. Your choice is saved on your own device so you are not asked again. The text fonts are loaded from Google Fonts, which means Google receives your IP address when the page loads. Links to Instagram, TikTok and email take you to services with their own privacy policies.</p>
+      <p>This site uses Google Analytics to count visits and see which links people use, but only if you choose Accept. Until then nothing is sent to Google Analytics and no analytics cookies are set. The site has no forms and does not ask for your name or contact details. Your choice is saved on your own device so you are not asked again. The text fonts are loaded from Google Fonts, which means Google receives your IP address when the page loads. Whoever hosts the site may keep basic server logs, as most hosts do. Links to Instagram, TikTok and email take you to services with their own privacy policies.</p>
       <button type="button" class="link-button" id="consent-reopen">Cookie choices</button>
     </section>
 
     <p class="footer__small">© 2026 Pink Rodeo Tattoo Club</p>
   </footer>
 
-  <div class="consent" id="consent" role="region" aria-label="Cookie choices" hidden>
-    <p>We use Google Analytics to see how this page is used. It only runs if you accept.</p>
-    <div class="consent__actions">
-      <button type="button" class="btn btn--secondary" id="consent-accept">Accept</button>
-      <button type="button" class="btn btn--secondary" id="consent-decline">Decline</button>
-    </div>
-  </div>
 
   <script src="script.js" defer></script>
 </body>

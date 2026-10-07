@@ -28,7 +28,7 @@ Decisions already made with you: strict reading of the cream rule (page is all g
 5. *(Why I tattoo: omitted.)*
 6. **How to book** `<section>` with `<h2>`, gold double-frame panel, two buttons.
 7. **Footer** `<footer>`: social and email links, privacy notice, "Cookie choices" button.
-8. **Consent banner**: fixed to the bottom, minimal, Accept and Decline.
+8. **Consent banner**: sits right after the skip link in the page order (so keyboard users meet it first), fixed to the bottom of the screen, minimal, Accept and Decline with equal prominence.
 
 Heading order: h1, then h2 "Federica's style", then h2 "How to book". The footer uses a labelled `<nav>` and no extra headings except one h2 "Privacy".
 
@@ -49,7 +49,7 @@ Heading order: h1, then h2 "Federica's style", then h2 "How to book". The footer
 > Federica works in fine line: light, delicate lines with a soft, refined finish. A tiny tattoo suits the style as well as a larger piece. If you have an idea in mind, send it to Federica on Instagram.
 
 **How to book** (h2)
-> Federica tattoos by appointment in North London, and books fine line tattoos in London on Wednesdays, Fridays and Saturdays only. Send a message on Instagram to get started.
+> Federica works by appointment in North London, on Wednesdays, Fridays and Saturdays only. To book a fine line tattoo in London, send a message on Instagram.
 
 Panel (gold double frame):
 - **Days:** Wednesday, Friday and Saturday
@@ -61,7 +61,7 @@ Buttons again: **Message Federica** and **Follow on Instagram**.
 - Links: Instagram, TikTok, Email (hello@pinkrodeotattooclub.co.uk)
 - Small line: © 2026 Pink Rodeo Tattoo Club
 - **Privacy** (h2, small):
-  > This site uses Google Analytics to count visits and see which links people use, but only if you choose Accept. Until then nothing is sent to Google Analytics and no analytics cookies are set. The site has no forms and does not ask for your name or contact details. Your accept or decline choice is saved on your own device so you are not asked again. The text fonts are loaded from Google Fonts, which means Google receives your IP address when the page loads. Links to Instagram, TikTok and email take you to services with their own privacy policies. Use "Cookie choices" below to change your mind at any time.
+  > This site uses Google Analytics to count visits and see which links people use, but only if you choose Accept. Until then nothing is sent to Google Analytics and no analytics cookies are set. The site has no forms and does not ask for your name or contact details. Your accept or decline choice is saved on your own device so you are not asked again. The text fonts are loaded from Google Fonts, which means Google receives your IP address when the page loads. Whoever hosts the site may keep basic server logs, as most hosts do. Links to Instagram, TikTok and email take you to services with their own privacy policies. Use "Cookie choices" below to change your mind at any time.
 - "Cookie choices" button reopens the banner.
 - Note to you (not on the page): this is plain-English drafting, **not legal advice**. Have it checked if the site becomes a business site.
 
