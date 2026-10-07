@@ -13,7 +13,8 @@ The site is plain files: one page, one stylesheet, one small script. There is no
 | `script.js` | The cookie choice banner and the click counting for Google Analytics. **The GA4 ID goes at the top of this file.** |
 | `robots.txt` | Tells search engines they may visit the site and where the sitemap is. |
 | `sitemap.xml` | The list of pages for Google (there is only one). |
-| `assets/` | `favicon.svg` (the small tab icon) plus two empty folders, `logo` and `work`, waiting for Federica's logo and photos. |
+| `assets/` | `favicon.svg` (the small tab icon), the `logo` folder and the `work` folder with the web-sized photos. |
+| `originals/` | Your full-size photos and logo. **Not published and not saved to GitHub.** See the note on photos below. |
 | `SPEC.md` | The plan we agreed: structure, wording and tracking. |
 
 ## What is still missing
@@ -21,10 +22,10 @@ The site is plain files: one page, one stylesheet, one small script. There is no
 The page is complete and works, but these things need to arrive before it is finished:
 
 1. ~~The GA4 measurement ID.~~ Done: `G-WEJ9S352CD` is in `script.js`. Analytics starts counting once the site is live and visitors press Accept.
-2. **Federica's logo** in `assets/logo`. For now the name is set in pink text.
-3. **Photos of her work** in `assets/work`. Until they arrive there is no "Recent work" section.
+2. ~~Federica's logo.~~ Done: it is in the hero.
+3. ~~Photos of her work.~~ Done: 10 photos are in "Recent work".
 4. **Her own words for "Why I tattoo"**, saved as `assets/why-i-tattoo.txt`. Until then that section (and the cream band) is not on the page.
-5. **A social preview photo**, 1200 by 630 pixels, so links shared on social media show a picture.
+5. **A social preview picture**, 1200 by 630 pixels, so links shared on social media show an image.
 6. **Confirmation** of whether the copy may say "female tattoo artist" and use she/her. For now the copy uses her name only.
 
 When you have any of these, put the files in the right folder and ask Claude to add them. It will write the alt text and wire them in. Tell Claude what each photo shows, in plain words.
@@ -48,6 +49,12 @@ When you have any of these, put the files in the right folder and ask Claude to 
 5. When you have finished, go back to Terminal and press **Control + C** to stop it.
 
 To see it as it looks on a phone: in Chrome, right-click the page, choose **Inspect**, then click the small phone and tablet icon at the top of the panel that opens.
+
+## A note on photos and privacy
+
+Photos taken on a phone usually carry hidden data: the exact place and time they were taken. Five of Federica's photos had GPS coordinates inside them, and this site is not meant to show a location. So the website only uses copies that have been resized and stripped of all hidden data. Your originals sit in the `originals` folder, which is deliberately left out of GitHub and of the website.
+
+**Never put original phone photos straight into `assets/work`.** Drop new photos in the `originals/work` folder and ask Claude to add them. It will resize them, remove the hidden data and write the descriptions.
 
 ## Set up GA4 (Google Analytics)
 

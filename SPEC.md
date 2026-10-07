@@ -11,11 +11,10 @@ Federica Aiello is a fine line tattoo artist in North London. The page exists to
 
 | Missing | Effect on the page |
 |---|---|
-| Logo in `assets/logo` | Brand name set in text, in Fraunces with the neon pink sign treatment. |
-| Photos in `assets/work` | "Recent work" section is left out. The gold frame style is still built and ready. |
-| `assets/why-i-tattoo.txt` | "Why I tattoo" (and so the cream section) is left out. |
+| `assets/why-i-tattoo.txt` | "Why I tattoo" (and so the cream section) is left out until Federica's own words arrive. |
 | A social preview photo | No `og:image`. Twitter card type is `summary`. |
-| Real GA4 ID | Added later: `G-WEJ9S352CD` is now in `script.js`. |
+
+Added later: the logo (now in the hero), 10 photos of her work (the "Recent work" section) and the GA4 ID `G-WEJ9S352CD`. One photo (`Fine line butterflies`) was not used because it shows people in underwear; Federica can decide. The images in `assets/` are clean web copies: resized JPEGs with no hidden location data. The full-size originals live in `originals/`, which git ignores and the site never publishes. (Five originals contained GPS coordinates, so they must never be uploaded.)
 
 Decisions already made with you: strict reading of the cream rule (page is all green until her words arrive); name only, no pronouns and no "female tattoo artist" in the copy until you confirm; testing with Chrome's built-in Lighthouse.
 
@@ -121,12 +120,13 @@ script.js           GA ID block, consent logic, event tracking
 robots.txt
 sitemap.xml
 assets/
-  logo/             (empty: waiting for Federica's logo)
-  work/             (empty: waiting for her photos)
+  logo/             Federica's logo, cropped square and resized (480px)
+  work/             10 photos, each in 640px and 960px widths
   favicon.svg       small pink "PR" on green, the only file I draw
 README.md           plain-English guide
 SPEC.md             this document
-.gitignore          .DS_Store, editor files, node_modules
+.gitignore          .DS_Store, editor files, node_modules, originals/
+originals/          full-size photos and logo (not committed, not published)
 ```
 No deployment config. The `.com` redirect and host choice are left for later.
 
