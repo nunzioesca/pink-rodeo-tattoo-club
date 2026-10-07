@@ -6,7 +6,7 @@
    Leave it as G-XXXXXXXXXX and Google Analytics will simply not load.
    This is the only place the ID appears in the code.
    ========================================================================== */
-var GA_MEASUREMENT_ID = 'G-XXXXXXXXXX';
+var GA_MEASUREMENT_ID = 'G-WEJ9S352CD';
 /* ========================================================================== */
 
 (function () {

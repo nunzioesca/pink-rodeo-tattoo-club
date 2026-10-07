@@ -15,7 +15,7 @@ Federica Aiello is a fine line tattoo artist in North London. The page exists to
 | Photos in `assets/work` | "Recent work" section is left out. The gold frame style is still built and ready. |
 | `assets/why-i-tattoo.txt` | "Why I tattoo" (and so the cream section) is left out. |
 | A social preview photo | No `og:image`. Twitter card type is `summary`. |
-| Real GA4 ID | Placeholder `G-XXXXXXXXXX`. Analytics will not load until it is replaced. |
+| Real GA4 ID | Added later: `G-WEJ9S352CD` is now in `script.js`. |
 
 Decisions already made with you: strict reading of the cream rule (page is all green until her words arrive); name only, no pronouns and no "female tattoo artist" in the copy until you confirm; testing with Chrome's built-in Lighthouse.
 

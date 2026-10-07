@@ -20,7 +20,7 @@ The site is plain files: one page, one stylesheet, one small script. There is no
 
 The page is complete and works, but these things need to arrive before it is finished:
 
-1. **The GA4 measurement ID.** Until it is pasted in, Google Analytics does nothing (see "Set up GA4" below).
+1. ~~The GA4 measurement ID.~~ Done: `G-WEJ9S352CD` is in `script.js`. Analytics starts counting once the site is live and visitors press Accept.
 2. **Federica's logo** in `assets/logo`. For now the name is set in pink text.
 3. **Photos of her work** in `assets/work`. Until they arrive there is no "Recent work" section.
 4. **Her own words for "Why I tattoo"**, saved as `assets/why-i-tattoo.txt`. Until then that section (and the cream band) is not on the page.
