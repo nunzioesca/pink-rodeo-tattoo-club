@@ -11,25 +11,25 @@ Federica Aiello is a fine line tattoo artist in North London. The page exists to
 
 | Missing | Effect on the page |
 |---|---|
-| `assets/why-i-tattoo.txt` | "Why I tattoo" (and so the cream section) is left out until Federica's own words arrive. |
+| `assets/about-me.txt` and her photo | The "About me" section (formerly "Why I tattoo") is left out until Federica's own words and photo arrive. |
 | A social preview photo | No `og:image`. Twitter card type is `summary`. |
 
 Added later: the logo (now in the hero), 10 photos of her work (the "Recent work" section) and the GA4 ID `G-WEJ9S352CD`. One photo (`Fine line butterflies`) was not used because it shows people in underwear; Federica can decide. The images in `assets/` are clean web copies: resized JPEGs with no hidden location data. The full-size originals live in `originals/`, which git ignores and the site never publishes. (Five originals contained GPS coordinates, so they must never be uploaded.)
 
-Decisions already made with you: strict reading of the cream rule (page is all green until her words arrive); name only, no pronouns and no "female tattoo artist" in the copy until you confirm; testing with Chrome's built-in Lighthouse.
+Decisions already made with you: strict reading of the cream rule (superseded: the palette is now pearl grey and rose); name only, no pronouns and no "female tattoo artist" in the copy until you confirm; testing with Chrome's built-in Lighthouse.
 
 ## 3. Page structure (single page, `index.html`)
 
 1. **Skip link** (visible on focus): "Skip to content".
-2. **Hero** `<header>`: text logo (not a heading), `<h1>`, one line, two buttons.
-3. **Federica's style** `<section>` with `<h2>`.
-4. *(Recent work: omitted.)*
-5. *(Why I tattoo: omitted.)*
-6. **How to book** `<section>` with `<h2>`, gold double-frame panel, two buttons.
+2. **Hero** `<header>`: Federica's logo image (not a heading), `<h1>`, one line, two buttons.
+3. **Recent work** `<section>` with `<h2>`: 10 framed photos.
+4. **Federica's style** `<section>` with `<h2>`.
+5. *(About me: omitted until her words and photo arrive.)*
+6. **How to book** `<section>` with `<h2>`, silver Victorian frame panel, two buttons.
 7. **Footer** `<footer>`: social and email links, privacy notice, "Cookie choices" button.
 8. **Consent banner**: sits right after the skip link in the page order (so keyboard users meet it first), fixed to the bottom of the screen, minimal, Accept and Decline with equal prominence.
 
-Heading order: h1, then h2 "Federica's style", then h2 "How to book". The footer uses a labelled `<nav>` and no extra headings except one h2 "Privacy".
+Heading order: h1, then h2 "Recent work", "Federica's style", ("About me" when added) and "How to book". The footer uses a labelled `<nav>` and no extra headings except one h2 "Privacy".
 
 ## 4. Full draft copy (British English, for your approval)
 
@@ -42,7 +42,7 @@ Heading order: h1, then h2 "Federica's style", then h2 "How to book". The footer
 - h1: Fine line tattoo artist in North London
 - Line: Delicate tattoos by Federica Aiello at Pink Rodeo Tattoo Club. By appointment.
 - Primary button (filled pink): **Message Federica** (DM link)
-- Secondary button (gold outline): **Follow on Instagram**
+- Secondary button (silver outline): **Follow on Instagram**
 
 **Federica's style** (h2)
 > Federica works in fine line: light, delicate lines with a soft, refined finish. A tiny tattoo suits the style as well as a larger piece. If you have an idea in mind, send it to Federica on Instagram.
@@ -50,7 +50,7 @@ Heading order: h1, then h2 "Federica's style", then h2 "How to book". The footer
 **How to book** (h2)
 > Federica works by appointment in North London, on Wednesdays, Fridays and Saturdays only. To book a fine line tattoo in London, send a message on Instagram.
 
-Panel (gold double frame):
+Panel (silver Victorian frame):
 - **Days:** Wednesday, Friday and Saturday
 - **Clients:** 18 or over, with photo ID
 
@@ -59,30 +59,36 @@ Buttons again: **Message Federica** and **Follow on Instagram**.
 **Footer**
 - Links: Instagram, TikTok, Email (hello@pinkrodeotattooclub.co.uk)
 - Small line: © 2026 Pink Rodeo Tattoo Club
-- **Privacy** (h2, small):
-  > This site uses Google Analytics to count visits and see which links people use, but only if you choose Accept. Until then nothing is sent to Google Analytics and no analytics cookies are set. The site has no forms and does not ask for your name or contact details. Your accept or decline choice is saved on your own device so you are not asked again. The text fonts are loaded from Google Fonts, which means Google receives your IP address when the page loads. Whoever hosts the site may keep basic server logs, as most hosts do. Links to Instagram, TikTok and email take you to services with their own privacy policies. Use "Cookie choices" below to change your mind at any time.
+- **Privacy** (h2, small, runs in with the text):
+  > We use Google Analytics to count visits and link clicks, only if you press Accept; until then nothing is sent and no analytics cookies are set. The site has no forms and collects no names or contact details. Your choice is saved on your device. Google Fonts sees your IP address when the page loads, and the host may keep standard server logs. Instagram, TikTok and email links go to services with their own privacy policies.
 - "Cookie choices" button reopens the banner.
 - Note to you (not on the page): this is plain-English drafting, **not legal advice**. Have it checked if the site becomes a business site.
 
 **Consent banner**
 > We use Google Analytics to see how this page is used. It only runs if you accept. [Accept] [Decline]
 
-## 5. Design
+## 5. Design (revised 7 October 2026 to match Federica's Instagram)
 
-Tokens (CSS custom properties in `styles.css`):
-- `--green: #0E2B22` page background, the only green.
-- `--cream: #F3EBDD` text on green (and the future "Why I tattoo" section background).
-- `--gold: #C9A24D` frames and secondary button outline.
-- `--pink: #FF6FB5` primary button and logo sign glow.
+Her Instagram is very light cool grey and white, black-and-white photography and one bubblegum pink, with pink serif headlines and pink stars. The first version (bottle green, cream, gold) was replaced.
+
+Tokens (CSS custom properties at the top of `styles.css`):
+- `--grey: #EDEDEF` pearl grey page background.
+- `--white: #FFFFFF` panels, photo mats, footer.
+- `--blush: #FBEAF2` the "About me" band, once her words and photo arrive.
+- `--pink: #EE6FA6` her logo pink: main button fill, logo glow, stars.
+- `--rose: #C42E73` deeper pink for all pink text (4.5:1 on grey, 5.3:1 on white). Bright pink is never used for text because it is only 2.4:1 on grey.
+- `--ink: #222226` charcoal body text (13.6:1 on grey).
+- `--silver: #7A7F8A` outer frame line and secondary button outline (3.4:1 on grey), `--silver-light: #A9ADB6` inner frame line.
 
 Details:
-- Gold double frame: `border: 2px solid gold`, then a 4px gap, then a 1px inner line (done with an `::before` inset 6px, no extra markup). Reused for the booking panel and, later, each photo.
-- Pink sign treatment: text-shadow in layered pink, soft and static. No animation, no flicker.
-- Primary button: pink fill, dark green text (5.9:1 contrast). Secondary: transparent, 2px gold border, cream text.
-- Fonts: Fraunces (weights 400 and 600) for headings, Jost (400 and 500) for body, one Google Fonts request, `display=swap`, `preconnect` to both Google hosts.
-- Mobile first at 375px. Buttons at least 48px tall and full width on small screens, side by side from about 600px. Body text 17px or more, large vertical spacing (about 5 to 6rem between sections), max content width about 38rem, centred.
-- Visible focus: 3px cream outline with offset on all interactive elements. `prefers-reduced-motion` removes any transitions and smooth scroll.
-- Contrast (all WCAG AA or better): cream on green 12.8:1, gold on green 6.3:1, dark green on pink 5.9:1, pink on green 5.9:1.
+- **Silver Victorian frame:** a thick outer rule, a thin inner rule, notched (concave) corners and a small pink four-point star in each corner. Drawn as one tiny inline SVG used as a CSS `border-image` (no extra file to download). Photos sit on a white mat inside it. Reused for the booking panel and every photo.
+- **Section titles:** deep rose Fraunces Bold with a small silver rule and a pink star beneath.
+- **Primary button:** `#EE6FA6` fill with charcoal text (5.6:1) and a soft static pink glow. Secondary: transparent with a 2px silver outline and charcoal text.
+- **Logo:** Federica's logo file in a round crop with a soft static pink halo (no flicker).
+- **Fonts:** Fraunces 400 and 700 (headings and the days line), Jost 400 and 500 (body), one Google Fonts request with `display=swap`, `preconnect`, loaded without blocking the first paint.
+- **Footer:** full-width white strip. Social links and the copyright on one row, then the privacy notice across the whole page width in small type. On a laptop or desktop screen that is about two lines; on a phone it necessarily wraps more.
+- **About me** (replaces "Why I tattoo"): blush band, Federica's photo small and round in a silver frame on one side, her own words beside it. Her words come from `assets/about-me.txt` (`why-i-tattoo.txt` is also accepted). Her photo goes in `originals/about/` and is resized and stripped of hidden data like the gallery photos.
+- Mobile first at 375px, buttons at least 48px tall, visible 3px rose focus rings, `prefers-reduced-motion` respected.
 
 ## 6. SEO
 
@@ -122,7 +128,7 @@ sitemap.xml
 assets/
   logo/             Federica's logo, cropped square and resized (480px)
   work/             10 photos, each in 640px and 960px widths
-  favicon.svg       small pink "PR" on green, the only file I draw
+  favicon.svg       small white "PR" on pink, the only file I draw
 README.md           plain-English guide
 SPEC.md             this document
 .gitignore          .DS_Store, editor files, node_modules, originals/
@@ -148,4 +154,4 @@ No deployment config. The `.com` redirect and host choice are left for later.
 
 ## 11. What I need from you later
 
-Logo, photos (with a line on what each shows, for alt text), a 1200x630 social photo, `assets/why-i-tattoo.txt` in Federica's own words, the GA4 measurement ID, confirmation of "female" and pronouns, and your host choice.
+Her photo for About me, `assets/about-me.txt` in Federica's own words, a 1200x630 social image, the GA4 measurement ID, confirmation of "female" and pronouns, and your host choice.

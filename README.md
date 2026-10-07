@@ -9,7 +9,7 @@ The site is plain files: one page, one stylesheet, one small script. There is no
 | File or folder | What it is |
 |---|---|
 | `index.html` | The page itself: all the words, links and search engine information. |
-| `styles.css` | Colours, fonts, spacing and the gold frames. |
+| `styles.css` | Colours, fonts, spacing and the silver frames. |
 | `script.js` | The cookie choice banner and the click counting for Google Analytics. **The GA4 ID goes at the top of this file.** |
 | `robots.txt` | Tells search engines they may visit the site and where the sitemap is. |
 | `sitemap.xml` | The list of pages for Google (there is only one). |
@@ -24,7 +24,7 @@ The page is complete and works, but these things need to arrive before it is fin
 1. ~~The GA4 measurement ID.~~ Done: `G-WEJ9S352CD` is in `script.js`. Analytics starts counting once the site is live and visitors press Accept.
 2. ~~Federica's logo.~~ Done: it is in the hero.
 3. ~~Photos of her work.~~ Done: 10 photos are in "Recent work".
-4. **Her own words for "Why I tattoo"**, saved as `assets/why-i-tattoo.txt`. Until then that section (and the cream band) is not on the page.
+4. **Her own words for "About me"**, saved as `assets/about-me.txt`, and **her photo** in `originals/about/`. Until both arrive that section (a blush-pink band with her photo small on one side) is not on the page.
 5. **A social preview picture**, 1200 by 630 pixels, so links shared on social media show an image.
 6. **Confirmation** of whether the copy may say "female tattoo artist" and use she/her. For now the copy uses her name only.
 
@@ -161,4 +161,16 @@ One thing worth knowing: loading fonts from Google means Google sees each visito
 
 ## Colours and fonts, if you ever want to change them
 
-At the very top of `styles.css` there are four colours and two fonts, each with a label. Change them there and the whole page follows. The brand colours are bottle green `#0E2B22`, cream `#F3EBDD`, gold `#C9A24D` and neon pink `#FF6FB5`.
+The look follows Federica's Instagram: light grey, white, one pink and silver details. At the very top of `styles.css` there are the colours and two fonts, each with a label. Change them there and the whole page follows.
+
+| Colour | Code | Used for |
+|---|---|---|
+| Pearl grey | `#EDEDEF` | Page background |
+| White | `#FFFFFF` | Panels, photo mats, footer |
+| Blush | `#FBEAF2` | The future "About me" band |
+| Logo pink | `#EE6FA6` | Main button, logo glow, frame stars (never for text) |
+| Deep rose | `#C42E73` | All pink text (the logo pink is too pale to read as text) |
+| Charcoal | `#222226` | Body text |
+| Silver | `#7A7F8A` and `#A9ADB6` | Frames, outlines, thin lines |
+
+The frames around the photos and the booking panel are drawn in the stylesheet (no image files): a silver double line with notched corners and a small pink star in each corner.
