@@ -24,11 +24,45 @@ Decisions made with you: the palette follows Federica's Instagram (pearl grey an
 3. **My recent work** `<section>` with `<h2>`: 10 framed photos.
 4. **My style** `<section>` with `<h2>`.
 5. *(About me: omitted until her words and photo arrive.)*
-6. **How to book** `<section>` with `<h2>`, silver Victorian frame panel, two buttons.
-7. **Footer** `<footer>`: Instagram, TikTok and email icons, privacy notice, "Cookie choices" button.
+6. **Ready for your fine line tattoo?** `<section>` with `<h2>`: what to send (numbered list in a silver frame), two buttons, then the Instagram, TikTok and email icons.
+7. **Footer** `<footer>`: copyright, "Cookie choices" button and the privacy notice.
 8. **Consent banner**: sits right after the skip link in the page order (so keyboard users meet it first), fixed to the bottom of the screen, minimal, Accept and Decline with equal prominence.
 
-Heading order: h1, then h2 "My recent work", "My style", ("About me" when added) and "How to book". The footer uses a labelled `<nav>` and no extra headings except one h2 "Privacy".
+Heading order: h1, then h2 "My recent work", "My style", ("About me" and "FAQ" when added) and "Ready for your fine line tattoo?". The footer uses a labelled `<nav>` and no extra headings except one h2 "Privacy".
+
+## 4. Copy (British English, first person as Federica; revised 7 October 2026)
+
+**Title tag** (49 characters): `Fine Line Tattoo Artist North London | Pink Rodeo`
+
+**Meta description** (148 characters): `I'm Federica Aiello, a fine line tattoo artist in North London. Delicate tattoos at Pink Rodeo Tattoo Club, by appointment. Message me on Instagram.`
+
+**Hero**
+- Logo: Federica's logo image
+- h1: Fine line tattoo artist in North London
+- Line: I'm Federica Aiello, and I make delicate tattoos at Pink Rodeo Tattoo Club, by appointment.
+- Primary button (filled pink): **Message me on Instagram** (DM link)
+- Secondary button (silver outline): **Follow me on Instagram**
+
+**My recent work** (h2): 10 photos in silver frames. Clicking a photo opens a larger copy in a viewer (previous and next buttons, arrow keys, Escape or the close button to leave).
+
+**My style** (h2)
+> I'm a female tattoo artist in London, and fine line is what I do: light, delicate lines with a soft, refined finish. A tiny tattoo suits the style as well as a larger piece.
+
+**Ready for your fine line tattoo?** (h2, the closing section)
+> I work by appointment in North London, on Wednesdays, Fridays and Saturdays. To enquire, send me a DM on Instagram with:
+
+Silver Victorian frame, numbered list: 1 Your idea, 2 The placement, 3 The approximate size, 4 A reference picture, if you have one.
+
+> I'll get back to you with availability and a quote.
+
+> You need to be 18 or over and bring photo ID to your appointment.
+
+Buttons: **Message me on Instagram** and **Follow me on Instagram**. Under them, three round icon buttons: Instagram (Instagram gradient), TikTok (black with its red and cyan edges) and email (rose).
+
+**Footer** `<footer>`: Instagram, TikTok and email icons, privacy notice, "Cookie choices" button.
+8. **Consent banner**: sits right after the skip link in the page order (so keyboard users meet it first), fixed to the bottom of the screen, minimal, Accept and Decline with equal prominence.
+
+Heading order: h1, then h2 "My recent work", "My style", ("About me" and "FAQ" when added) and "Ready for your fine line tattoo?". The footer uses a labelled `<nav>` and no extra headings except one h2 "Privacy".
 
 ## 4. Copy (British English, first person as Federica; revised 7 October 2026)
 
@@ -58,10 +92,9 @@ Panel (silver Victorian frame):
 Buttons again: **Message me on Instagram** and **Follow me on Instagram**.
 
 **Footer**
-- Round icon buttons for Instagram, TikTok and email (hello@pinkrodeotattooclub.co.uk). Each has a hidden text label for screen readers.
-- Small line: © 2026 Pink Rodeo Tattoo Club, and the "Cookie choices" button.
+- One row: © 2026 Pink Rodeo Tattoo Club and the "Cookie choices" button. (The Instagram, TikTok and email icons moved up under the closing buttons.)
 - **Privacy** (h2, small, runs in with the text):
-  > I use Google Analytics to count visits and link clicks, only if you press Accept; until then nothing is sent and no analytics cookies are set. This site has no forms and I collect no names or contact details. Your choice is saved on your device. Google Fonts sees your IP address when the page loads, and my host may keep standard server logs. Instagram, TikTok and email links go to services with their own privacy policies.
+  > I use Google Analytics to count visits and link clicks, only if you press Accept; until then nothing is sent and no analytics cookies are set. This site has no forms and I collect no names or contact details. Your choice is saved on your device. Google Fonts sees your IP address when the page loads, and my host may keep standard server logs. The Instagram, TikTok and email links go to services with their own privacy policies.
 - Note to you (not on the page): this is plain-English drafting, **not legal advice**.
 
 **Consent banner**
@@ -82,10 +115,10 @@ Tokens (CSS custom properties at the top of `styles.css`):
 
 Details:
 - **Silver Victorian frame:** a thick outer rule, a thin inner rule, notched (concave) corners and a small pink four-point star in each corner. Drawn as one tiny inline SVG used as a CSS `border-image` (no extra file to download). Photos sit on a white mat inside it. Reused for the booking panel and every photo.
-- **Section titles:** deep rose Fraunces Bold with a small silver rule and a pink star beneath.
+- **Section titles:** deep rose Didot Bold with a small silver rule and a pink star beneath.
 - **Primary button:** `#EE6FA6` fill with charcoal text (5.6:1) and a soft static pink glow. Secondary: transparent with a 2px silver outline and charcoal text.
 - **Logo:** Federica's logo file in a round crop with a soft static pink halo (no flicker).
-- **Fonts:** Fraunces 400 and 700 (headings and the days line), Jost 400 and 500 (body), one Google Fonts request with `display=swap`, `preconnect`, loaded without blocking the first paint.
+- **Fonts:** headings use **Didot** (Federica's choice). Didot is a licensed font that is built into Macs, iPhones and iPads, so it shows there with no download. Everyone else gets **Bodoni Moda 400 and 700**, a free lookalike from Google Fonts (downloaded only when Didot is missing). Body text is Jost 400 and 500. One Google Fonts request with `display=swap`, `preconnect`, loaded without blocking the first paint. Showing the real Didot on every device would need a purchased web font licence.
 - **Footer:** full-width white strip. Social links and the copyright on one row, then the privacy notice across the whole page width in small type. On a laptop or desktop screen that is about two lines; on a phone it necessarily wraps more.
 - **About me** (replaces "Why I tattoo"): blush band, Federica's photo small and round in a silver frame on one side, her own words beside it. Her words come from `assets/about-me.txt` (`why-i-tattoo.txt` is also accepted). Her photo goes in `originals/about/` and is resized and stripped of hidden data like the gallery photos.
 - Mobile first at 375px, buttons at least 48px tall, visible 3px rose focus rings, `prefers-reduced-motion` respected.
@@ -111,9 +144,9 @@ Details:
 | Event name | Element | Extra data (`data-location`) |
 |---|---|---|
 | `click_dm` | "Message me on Instagram" buttons (hero, booking) | `hero`, `booking` |
-| `click_instagram_follow` | "Follow me on Instagram" buttons and the footer Instagram icon | `hero`, `booking`, `footer` |
-| `click_email` | footer email icon | `footer` |
-| `click_tiktok` | footer TikTok icon | `footer` |
+| `click_instagram_follow` | "Follow me on Instagram" buttons and the Instagram icon under the closing buttons | `hero`, `booking`, `icons` |
+| `click_email` | email icon under the closing buttons | `icons` |
+| `click_tiktok` | TikTok icon under the closing buttons | `icons` |
 
 - Events fire only when consent is granted. All external links open in a new tab with `rel="noopener noreferrer"`, so the visitor keeps the page open.
 

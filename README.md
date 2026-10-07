@@ -93,11 +93,11 @@ You can do the same for `click_instagram_follow` if you want follows counted as 
 | Event | When it fires |
 |---|---|
 | `click_dm` | Someone taps "Message me on Instagram". |
-| `click_instagram_follow` | Someone taps "Follow me on Instagram", or the Instagram icon in the footer. |
-| `click_email` | Someone taps the email icon in the footer. |
-| `click_tiktok` | Someone taps the TikTok icon in the footer. |
+| `click_instagram_follow` | Someone taps "Follow me on Instagram", or the Instagram icon under the closing buttons. |
+| `click_email` | Someone taps the email icon under the closing buttons. |
+| `click_tiktok` | Someone taps the TikTok icon under the closing buttons. |
 
-Each event also records where on the page it happened (`hero`, `booking` or `footer`) in a field called `link_location`. To see it in reports: **Admin, Custom definitions, Create custom dimension**, choose scope **Event**, name it "Link location" and type `link_location` as the event parameter.
+Each event also records where on the page it happened (`hero`, `booking` or `icons`, meaning the round icons under the closing buttons) in a field called `link_location`. To see it in reports: **Admin, Custom definitions, Create custom dimension**, choose scope **Event**, name it "Link location" and type `link_location` as the event parameter.
 
 ## Set up Search Console
 
@@ -159,7 +159,7 @@ One thing worth knowing: loading fonts from Google means Google sees each visito
 
 ## Colours and fonts, if you ever want to change them
 
-The look follows Federica's Instagram: light grey, white, one pink and silver details. At the very top of `styles.css` there are the colours and two fonts, each with a label. Change them there and the whole page follows.
+The look follows Federica's Instagram: light grey, white, one pink and silver details. At the very top of `styles.css` there are the colours and the two fonts, each with a label. Headings use Didot, which is built into Apple devices; other devices show Bodoni Moda, a free lookalike. Change them there and the whole page follows.
 
 | Colour | Code | Used for |
 |---|---|---|
