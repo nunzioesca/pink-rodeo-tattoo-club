@@ -171,4 +171,4 @@ The look follows Federica's Instagram: light grey, white, one pink and silver de
 | Charcoal | `#222226` | Body text |
 | Silver | `#7A7F8A` and `#A9ADB6` | Frames, outlines, thin lines |
 
-The frames around the photos and the booking panel are drawn in the stylesheet (no image files): a silver double line with notched corners and a small pink star in each corner.
+The frames around the photos are drawn in the stylesheet (no image files): one silver line with notched corners and a small pink star in each corner. The buttons get their 3D look from the stylesheet too.

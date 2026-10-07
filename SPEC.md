@@ -24,7 +24,7 @@ Decisions made with you: the palette follows Federica's Instagram (pearl grey an
 3. **My recent work** `<section>` with `<h2>`: 10 framed photos.
 4. **My style** `<section>` with `<h2>`.
 5. *(About me: omitted until her words and photo arrive.)*
-6. **Ready for your fine line tattoo?** `<section>` with `<h2>`: what to send (numbered list in a silver frame), two buttons, then the Instagram, TikTok and email icons.
+6. **Ready for your fine line tattoo?** `<section>` with `<h2>`: what to send (plain numbered lines), two buttons, then the Instagram, TikTok and email icons.
 7. **Footer** `<footer>`: copyright, "Cookie choices" button and the privacy notice.
 8. **Consent banner**: sits right after the skip link in the page order (so keyboard users meet it first), fixed to the bottom of the screen, minimal, Accept and Decline with equal prominence.
 
@@ -51,7 +51,7 @@ Heading order: h1, then h2 "My recent work", "My style", ("About me" and "FAQ" w
 **Ready for your fine line tattoo?** (h2, the closing section)
 > I work by appointment in North London, on Wednesdays, Fridays and Saturdays. To enquire, send me a DM on Instagram with:
 
-Silver Victorian frame, numbered list: 1 Your idea, 2 The placement, 3 The approximate size, 4 A reference picture, if you have one.
+Plain centred numbered lines (no box, like "My style"): 1 Your idea, 2 The placement, 3 The approximate size, 4 A reference picture, if you have one.
 
 > I'll get back to you with availability and a quote.
 
@@ -114,9 +114,9 @@ Tokens (CSS custom properties at the top of `styles.css`):
 - `--silver: #7A7F8A` outer frame line and secondary button outline (3.4:1 on grey), `--silver-light: #A9ADB6` inner frame line.
 
 Details:
-- **Silver Victorian frame:** a thick outer rule, a thin inner rule, notched (concave) corners and a small pink four-point star in each corner. Drawn as one tiny inline SVG used as a CSS `border-image` (no extra file to download). Photos sit on a white mat inside it. Reused for the booking panel and every photo.
+- **Silver Victorian frame:** one thick silver outer line, notched (concave) corners and a small pink four-point star in each corner. Drawn as one tiny inline SVG used as a CSS `border-image` (no extra file to download). Photos sit on a white mat inside it. Used for every photo and in the photo viewer.
 - **Section titles:** deep rose Didot Bold with a small silver rule and a pink star beneath.
-- **Primary button:** `#EE6FA6` fill with charcoal text (5.6:1) and a soft static pink glow. Secondary: transparent with a 2px silver outline and charcoal text.
+- **Buttons (3D):** a lit top edge, a solid lip underneath and a soft shadow, so they look pressable; on press they sink onto the lip. Primary: pink gradient (`#F47FB2` to `#E8639C`) with charcoal text (at least 5:1 contrast) and a deep-pink lip. Secondary: white-to-pale-grey face with a silver outline and silver lip. A tiny movement on hover and press, switched off for visitors who prefer reduced motion.
 - **Logo:** Federica's logo file in a round crop with a soft static pink halo (no flicker).
 - **Fonts:** headings use **Didot** (Federica's choice). Didot is a licensed font that is built into Macs, iPhones and iPads, so it shows there with no download. Everyone else gets **Bodoni Moda 400 and 700**, a free lookalike from Google Fonts (downloaded only when Didot is missing). Body text is Jost 400 and 500. One Google Fonts request with `display=swap`, `preconnect`, loaded without blocking the first paint. Showing the real Didot on every device would need a purchased web font licence.
 - **Footer:** full-width white strip. Social links and the copyright on one row, then the privacy notice across the whole page width in small type. On a laptop or desktop screen that is about two lines; on a phone it necessarily wraps more.
