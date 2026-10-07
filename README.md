@@ -23,10 +23,9 @@ The page is complete and works, but these things need to arrive before it is fin
 
 1. ~~The GA4 measurement ID.~~ Done: `G-WEJ9S352CD` is in `script.js`. Analytics starts counting once the site is live and visitors press Accept.
 2. ~~Federica's logo.~~ Done: it is in the hero.
-3. ~~Photos of her work.~~ Done: 10 photos are in "Recent work".
+3. ~~Photos of her work.~~ Done: 10 photos are in "My recent work". Click one on the page to see it larger.
 4. **Her own words for "About me"**, saved as `assets/about-me.txt`, and **her photo** in `originals/about/`. Until both arrive that section (a blush-pink band with her photo small on one side) is not on the page.
 5. **A social preview picture**, 1200 by 630 pixels, so links shared on social media show an image.
-6. **Confirmation** of whether the copy may say "female tattoo artist" and use she/her. For now the copy uses her name only.
 
 When you have any of these, put the files in the right folder and ask Claude to add them. It will write the alt text and wire them in. Tell Claude what each photo shows, in plain words.
 
@@ -58,7 +57,7 @@ Photos taken on a phone usually carry hidden data: the exact place and time they
 
 ## Set up GA4 (Google Analytics)
 
-GA4 tells you how many people visit and, more importantly, how many tap "Message Federica".
+GA4 tells you how many people visit and, more importantly, how many tap "Message me on Instagram".
 
 1. Go to **analytics.google.com** and sign in with a Google account.
 2. If it is a new account, click **Start measuring** and follow the prompts. Otherwise click the cog (**Admin**) at the bottom left.
@@ -76,7 +75,7 @@ GA4 tells you how many people visit and, more importantly, how many tap "Message
 
 Because of this, GA4 only counts visitors who press Accept. Your numbers will be lower than the true number of visitors. That is normal and is the price of respecting the choice.
 
-**Check it works:** after the site is live, open it in your browser, press Accept, and tap "Message Federica". In GA4 go to **Reports, Realtime**. You should see yourself, and within a few seconds an event called `click_dm`.
+**Check it works:** after the site is live, open it in your browser, press Accept, and tap "Message me on Instagram". In GA4 go to **Reports, Realtime**. You should see yourself, and within a few seconds an event called `click_dm`.
 
 ### Mark the DM click as a key event
 
@@ -94,10 +93,10 @@ You can do the same for `click_instagram_follow` if you want follows counted as 
 
 | Event | When it fires |
 |---|---|
-| `click_dm` | Someone taps "Message Federica". |
-| `click_instagram_follow` | Someone taps "Follow on Instagram", or the Instagram link in the footer. |
-| `click_email` | Someone taps the email link in the footer. |
-| `click_tiktok` | Someone taps the TikTok link in the footer. |
+| `click_dm` | Someone taps "Message me on Instagram". |
+| `click_instagram_follow` | Someone taps "Follow me on Instagram", or the Instagram icon in the footer. |
+| `click_email` | Someone taps the email icon in the footer. |
+| `click_tiktok` | Someone taps the TikTok icon in the footer. |
 
 Each event also records where on the page it happened (`hero`, `booking` or `footer`) in a field called `link_location`. To see it in reports: **Admin, Custom definitions, Create custom dimension**, choose scope **Event**, name it "Link location" and type `link_location` as the event parameter.
 

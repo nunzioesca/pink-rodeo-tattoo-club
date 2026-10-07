@@ -130,3 +130,60 @@ var GA_MEASUREMENT_ID = 'G-WEJ9S352CD';
     showBanner(false);
   }
 })();
+
+/* Photo viewer: clicking a photo in "My recent work" opens a larger copy.
+   Arrow buttons or the left and right arrow keys move between photos, Escape closes it.
+   Without JavaScript the photo link simply opens the large photo. */
+(function () {
+  'use strict';
+
+  var links = document.querySelectorAll('.photo-link');
+  var dialog = document.getElementById('lightbox');
+  if (!links.length || !dialog || typeof dialog.showModal !== 'function') { return; }
+
+  var bigImage = document.getElementById('lightbox-img');
+  var count = document.getElementById('lightbox-count');
+  var current = 0;
+
+  function show(index) {
+    current = (index + links.length) % links.length;
+    var link = links[current];
+    bigImage.src = link.getAttribute('href');
+    bigImage.alt = link.querySelector('img').alt;
+    count.textContent = (current + 1) + ' of ' + links.length;
+  }
+
+  function preloadNeighbours() {
+    [current - 1, current + 1].forEach(function (i) {
+      var near = links[(i + links.length) % links.length];
+      new Image().src = near.getAttribute('href');
+    });
+  }
+
+  Array.prototype.forEach.call(links, function (link, index) {
+    link.addEventListener('click', function (event) {
+      if (event.metaKey || event.ctrlKey || event.shiftKey || event.button !== 0) { return; }
+      event.preventDefault();
+      show(index);
+      dialog.showModal();
+      preloadNeighbours();
+    });
+  });
+
+  document.getElementById('lightbox-prev').addEventListener('click', function () { show(current - 1); preloadNeighbours(); });
+  document.getElementById('lightbox-next').addEventListener('click', function () { show(current + 1); preloadNeighbours(); });
+  document.getElementById('lightbox-close').addEventListener('click', function () { dialog.close(); });
+
+  dialog.addEventListener('click', function (event) {
+    if (event.target === dialog) { dialog.close(); }   // a click on the dark area
+  });
+
+  dialog.addEventListener('close', function () {
+    links[current].focus();   // put keyboard focus back on the photo that was last viewed
+  });
+
+  dialog.addEventListener('keydown', function (event) {
+    if (event.key === 'ArrowLeft') { show(current - 1); preloadNeighbours(); }
+    if (event.key === 'ArrowRight') { show(current + 1); preloadNeighbours(); }
+  });
+})();
