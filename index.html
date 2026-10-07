@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en-GB">
 <head>
   <meta charset="utf-8">
@@ -24,7 +24,9 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;600&amp;family=Jost:wght@400;500&amp;display=swap">
+  <!-- Fonts load without blocking the first paint; the noscript line is the fallback. -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;600&amp;family=Jost:wght@400;500&amp;display=swap" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;600&amp;family=Jost:wght@400;500&amp;display=swap"></noscript>
   <link rel="stylesheet" href="styles.css">
 
   <!-- Google Consent Mode v2: everything denied until the visitor accepts.
@@ -76,13 +78,13 @@
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
 
-  <div class="consent" id="consent" role="region" aria-label="Cookie choices" hidden>
+  <section class="consent" id="consent" aria-label="Cookie choices" hidden>
     <p>We use Google Analytics to see how this page is used. It only runs if you accept.</p>
     <div class="consent__actions">
       <button type="button" class="btn btn--secondary" id="consent-accept">Accept</button>
       <button type="button" class="btn btn--secondary" id="consent-decline">Decline</button>
     </div>
-  </div>
+  </section>
 
   <header class="hero">
     <p class="logo">
