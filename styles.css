@@ -33,12 +33,13 @@ body {
 
 h1, h2 {
   margin: 0;
+  text-wrap: balance;
   font-family: var(--font-heading);
   font-weight: 600;
   line-height: 1.2;
 }
 
-p { margin: 0; }
+p { margin: 0; text-wrap: pretty; }
 
 a { color: inherit; }
 
@@ -46,6 +47,18 @@ a { color: inherit; }
 :focus-visible {
   outline: 3px solid var(--cream);
   outline-offset: 3px;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }
 
 .skip-link {
@@ -98,6 +111,7 @@ a { color: inherit; }
 
 .hero__line {
   margin-top: 1.25rem;
+  text-wrap: balance;
   font-size: 1.1875rem;
 }
 
@@ -227,6 +241,9 @@ a { color: inherit; }
 }
 
 .privacy { margin-top: 2.5rem; }
+
+/* Keep the end of the footer readable while the consent banner is open */
+body:has(.consent:not([hidden])) .footer { padding-bottom: 11rem; }
 .privacy h2 {
   margin-bottom: 0.75rem;
   font-size: 1.125rem;

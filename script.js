@@ -65,7 +65,10 @@ var GA_MEASUREMENT_ID = 'G-XXXXXXXXXX';
     tag.src = 'https://www.googletagmanager.com/gtag/js?id=' + encodeURIComponent(GA_MEASUREMENT_ID);
     document.head.appendChild(tag);
     gtag('js', new Date());
-    gtag('config', GA_MEASUREMENT_ID);
+    gtag('config', GA_MEASUREMENT_ID, {
+      allow_google_signals: false,
+      allow_ad_personalization_signals: false
+    });
   }
 
   function disableAnalytics() {

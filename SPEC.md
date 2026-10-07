@@ -53,8 +53,7 @@ Heading order: h1, then h2 "Federica's style", then h2 "How to book". The footer
 
 Panel (gold double frame):
 - **Days:** Wednesday, Friday and Saturday
-- **Age:** 18 or over
-- **Bring:** photo ID
+- **Clients:** 18 or over, with photo ID
 
 Buttons again: **Message Federica** and **Follow on Instagram**.
 
@@ -80,11 +79,11 @@ Tokens (CSS custom properties in `styles.css`):
 Details:
 - Gold double frame: `border: 2px solid gold`, then a 4px gap, then a 1px inner line (done with an `::before` inset 6px, no extra markup). Reused for the booking panel and, later, each photo.
 - Pink sign treatment: text-shadow in layered pink, soft and static. No animation, no flicker.
-- Primary button: pink fill, dark green text (about 7:1 contrast). Secondary: transparent, 2px gold border, cream text.
+- Primary button: pink fill, dark green text (5.9:1 contrast). Secondary: transparent, 2px gold border, cream text.
 - Fonts: Fraunces (weights 400 and 600) for headings, Jost (400 and 500) for body, one Google Fonts request, `display=swap`, `preconnect` to both Google hosts.
 - Mobile first at 375px. Buttons at least 48px tall and full width on small screens, side by side from about 600px. Body text 17px or more, large vertical spacing (about 5 to 6rem between sections), max content width about 38rem, centred.
 - Visible focus: 3px cream outline with offset on all interactive elements. `prefers-reduced-motion` removes any transitions and smooth scroll.
-- Contrast (all WCAG AA or better): cream on green about 13:1, gold on green about 6:1, dark green on pink about 7:1.
+- Contrast (all WCAG AA or better): cream on green 12.8:1, gold on green 6.3:1, dark green on pink 5.9:1, pink on green 5.9:1.
 
 ## 6. SEO
 
