@@ -12,7 +12,6 @@ Federica Aiello is a fine line tattoo artist in North London. The page exists to
 | Missing | Effect on the page |
 |---|---|
 | `assets/about-me.txt` and her photo | The "About me" section (formerly "Why I tattoo") is left out until Federica's own words and photo arrive. |
-| A social preview photo | No `og:image`. Twitter card type is `summary`. |
 
 Added later: the logo (now in the hero), 10 photos of her work (the "Recent work" section) and the GA4 ID `G-WEJ9S352CD`. One photo (`Fine line butterflies`) was not used because it shows people in underwear; Federica can decide. The images in `assets/` are clean web copies: resized JPEGs with no hidden location data. The full-size originals live in `originals/`, which git ignores and the site never publishes. (Five originals contained GPS coordinates, so they must never be uploaded.)
 
@@ -26,7 +25,7 @@ Decisions made with you: the palette follows Federica's Instagram (pearl grey an
 4. **My style** `<section>` with `<h2>`.
 5. *(About me: omitted until her words and photo arrive.)*
 6. **How to book** `<section>` with `<h2>`, silver Victorian frame panel, two buttons.
-7. **Footer** `<footer>`: social and email links, privacy notice, "Cookie choices" button.
+7. **Footer** `<footer>`: Instagram, TikTok and email icons, privacy notice, "Cookie choices" button.
 8. **Consent banner**: sits right after the skip link in the page order (so keyboard users meet it first), fixed to the bottom of the screen, minimal, Accept and Decline with equal prominence.
 
 Heading order: h1, then h2 "My recent work", "My style", ("About me" when added) and "How to book". The footer uses a labelled `<nav>` and no extra headings except one h2 "Privacy".
@@ -94,7 +93,7 @@ Details:
 ## 6. SEO
 
 - `<html lang="en-GB">`, unique title and description (section 4), `<link rel="canonical" href="https://pinkrodeotattooclub.co.uk/">`.
-- Open Graph (`og:type website`, title, description, url, site name, locale `en_GB`) and Twitter tags. `og:image` and the 1200x630 image added only when you supply a photo.
+- Open Graph (`og:type website`, title, description, url, site name, locale `en_GB`, image) and Twitter tags (`summary_large_image`). The 1200x630 share image is `assets/social-preview.jpg`: the logo on pearl grey with the h1 line.
 - JSON-LD `@graph` with **Organization** (Pink Rodeo Tattoo Club, url, email, sameAs Instagram and TikTok) and **Person** (Federica Aiello, jobTitle "Tattoo artist", worksFor the Organization, sameAs Instagram and TikTok). No address, no LocalBusiness type. Organization `logo` added when a logo exists.
 - Search phrases worked in once each: fine line tattoo artist North London (title, description, h1), fine line tattoo London (booking copy), delicate tattoos (hero line), tiny tattoo and female tattoo artist (style copy).
 - Images: width, height, descriptive alt, `loading="lazy"` below the fold, WebP where `sips` can make it (I will test). Nothing to apply yet.
@@ -155,4 +154,4 @@ No deployment config. The `.com` redirect and host choice are left for later.
 
 ## 11. What I need from you later
 
-Her photo for About me, `assets/about-me.txt` in Federica's own words, a 1200x630 social image, the GA4 measurement ID, confirmation of "female" and pronouns, and your host choice.
+Her photo for About me, `assets/about-me.txt` in Federica's own words, and your host choice.

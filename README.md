@@ -25,7 +25,6 @@ The page is complete and works, but these things need to arrive before it is fin
 2. ~~Federica's logo.~~ Done: it is in the hero.
 3. ~~Photos of her work.~~ Done: 10 photos are in "My recent work". Click one on the page to see it larger.
 4. **Her own words for "About me"**, saved as `assets/about-me.txt`, and **her photo** in `originals/about/`. Until both arrive that section (a blush-pink band with her photo small on one side) is not on the page.
-5. **A social preview picture**, 1200 by 630 pixels, so links shared on social media show an image.
 
 When you have any of these, put the files in the right folder and ask Claude to add them. It will write the alt text and wire them in. Tell Claude what each photo shows, in plain words.
 
