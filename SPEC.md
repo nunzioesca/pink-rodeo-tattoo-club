@@ -139,7 +139,7 @@ Details:
 - `<html lang="en-GB">`, unique title and description (section 4), `<link rel="canonical" href="https://pinkrodeotattooclub.co.uk/">`.
 - Open Graph (`og:type website`, title, description, url, site name, locale `en_GB`, image) and Twitter tags (`summary_large_image`). The 1200x630 share image is `assets/social-preview.jpg`: the logo on pearl grey with the h1 line.
 - JSON-LD `@graph` with **Organization** (Pink Rodeo Tattoo Club, url, email, sameAs Instagram and TikTok) and **Person** (Federica Aiello, jobTitle "Tattoo artist", worksFor the Organization, sameAs Instagram and TikTok). No address, no LocalBusiness type. Organization `logo` added when a logo exists.
-- Search phrases worked in once each: fine line tattoo artist North London (title, description, h1), fine line tattoo London (booking copy), delicate tattoos (hero line), tiny tattoo and female tattoo artist (style copy).
+- Search phrases worked in naturally: fine line tattoo artist North London (title, description, h1), female tattoo artist (first sentence of About), delicate tattoos and tiny tattoo (About), fine line tattoo London (closing heading and description). See "How the search words work" in README.md.
 - Images: width, height, descriptive alt, `loading="lazy"` below the fold, WebP where `sips` can make it (I will test). Nothing to apply yet.
 - `robots.txt`: allow all, link to sitemap. `sitemap.xml`: the one URL `https://pinkrodeotattooclub.co.uk/` with today's date.
 
