@@ -10,7 +10,8 @@
   --ink: #222226;           /* body text */
   --ink-soft: #4A4A52;      /* small print */
   --silver: #7A7F8A;        /* frame outer line, secondary button outline */
-  --silver-light: #A9ADB6;  /* frame inner line, hairlines */
+  --silver-light: #A9ADB6;  /* hairlines */
+  --pink-soft: #F3B8D2;     /* light pink lines and borders */
 
   --font-heading: "Didot", "Bodoni Moda", "Bodoni 72", Georgia, "Times New Roman", serif;
   --font-body: "Jost", system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
@@ -85,7 +86,7 @@ a { color: inherit; }
 .hero {
   max-width: var(--measure);
   margin: 0 auto;
-  padding: 4rem var(--gutter) 5rem;
+  padding: 4rem var(--gutter) 3.25rem;
   text-align: center;
 }
 
@@ -110,12 +111,6 @@ a { color: inherit; }
 
 .hero h1 {
   font-size: clamp(1.875rem, 7.5vw, 2.75rem);
-}
-
-.hero__line {
-  margin-top: 1.25rem;
-  font-size: 1.1875rem;
-  text-wrap: balance;
 }
 
 /* Buttons */
@@ -204,7 +199,6 @@ a { color: inherit; }
   padding: 0 var(--gutter) 5.5rem;
   text-align: center;
 }
-.section--wide { max-width: 46rem; }
 
 .section h2 {
   font-size: clamp(1.75rem, 6vw, 2.125rem);
@@ -221,25 +215,46 @@ a { color: inherit; }
 }
 
 .section p { font-size: 1.125rem; }
+.section p + p { margin-top: 1.125rem; }
 
-/* Silver Victorian frame: one thick outer rule, notched corners and a
-   small pink star in each corner. One tiny inline SVG, used as a 9-slice border image.
+/* The closing line of the About text, in the heading font */
+.section .about__closing {
+  margin-top: 1.75rem;
+  color: var(--rose);
+  font-family: var(--font-heading);
+  font-size: clamp(1.375rem, 5vw, 1.75rem);
+  line-height: 1.3;
+  text-wrap: balance;
+}
+
+/* Photo frame: a thick outer line, a thin inner line, square corners and a small star in each
+   corner. One tiny inline SVG, used as a 9-slice border image.
    Reuse by adding class="frame" to a panel or a photo wrapper. */
 .frame {
   position: relative;
   border: 21px solid transparent;
-  border-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'%3E%3Cpath d='M10 1H30A9 9 0 0 0 39 10V30A9 9 0 0 0 30 39H10A9 9 0 0 0 1 30V10A9 9 0 0 0 10 1Z' fill='%23fff' stroke='%237A7F8A' stroke-width='1.4'/%3E%3Cg fill='%23EE6FA6'%3E%3Cpath d='M4 1L4.9 3.1 7 4 4.9 4.9 4 7 3.1 4.9 1 4 3.1 3.1Z'/%3E%3Cpath d='M36 1L36.9 3.1 39 4 36.9 4.9 36 7 35.1 4.9 33 4 35.1 3.1Z'/%3E%3Cpath d='M4 33L4.9 35.1 7 36 4.9 36.9 4 39 3.1 36.9 1 36 3.1 35.1Z'/%3E%3Cpath d='M36 33L36.9 35.1 39 36 36.9 36.9 36 39 35.1 36.9 33 36 35.1 35.1Z'/%3E%3C/g%3E%3C/svg%3E") 14 / 21px stretch;
+  border-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'%3E%3Cpath d='M1 1H39V39H1Z' fill='%23fff' stroke='%23EE6FA6' stroke-width='1.4'/%3E%3Cpath d='M5 5H35V35H5Z' fill='none' stroke='%23F3B8D2' stroke-width='0.7'/%3E%3Cg fill='%23C42E73' stroke='%23fff' stroke-width='0.9' paint-order='stroke'%3E%3Cpath d='M3.60 -0.30 4.75 2.45 7.50 3.60 4.75 4.75 3.60 7.50 2.45 4.75 -0.30 3.60 2.45 2.45Z'/%3E%3Cpath d='M36.40 -0.30 37.55 2.45 40.30 3.60 37.55 4.75 36.40 7.50 35.25 4.75 32.50 3.60 35.25 2.45Z'/%3E%3Cpath d='M3.60 32.50 4.75 35.25 7.50 36.40 4.75 37.55 3.60 40.30 2.45 37.55 -0.30 36.40 2.45 35.25Z'/%3E%3Cpath d='M36.40 32.50 37.55 35.25 40.30 36.40 37.55 37.55 36.40 40.30 35.25 37.55 32.50 36.40 35.25 35.25Z'/%3E%3C/g%3E%3C/svg%3E") 14 / 21px stretch;
   background: var(--white);
   background-clip: padding-box;
 }
 
-/* Photo gallery: one column on phones, two from 600px */
+/* Photo gallery: 1 column on phones, then 2, 3 and 4 as the screen widens.
+   Flex (not grid) so an unfinished last row is centred instead of left-aligned. */
+.section--gallery { max-width: 78rem; }
 .gallery {
-  display: grid;
-  gap: 1.5rem;
+  --cols: 1;
+  --gap: 1.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--gap);
   margin: 0;
   padding: 0;
   list-style: none;
+}
+.gallery li {
+  flex: 0 0 calc((100% - (var(--cols) - 1) * var(--gap)) / var(--cols));
+  min-width: 0;
 }
 .frame--photo { margin: 0; }
 .frame--photo img {
@@ -292,8 +307,8 @@ a { color: inherit; }
 
 /* Footer: full-width strip */
 .footer {
-  background: var(--white);
-  border-top: 1px solid var(--silver-light);
+  background: var(--blush);
+  border-top: 1px solid var(--pink-soft);
 }
 .footer__inner {
   max-width: 82rem;
@@ -352,7 +367,7 @@ a { color: inherit; }
 .privacy {
   margin-top: 1rem;
   padding-top: 1rem;
-  border-top: 1px solid var(--silver-light);
+  border-top: 1px solid var(--pink-soft);
   color: var(--ink-soft);
   font-size: 0.8125rem;
   line-height: 1.6;
@@ -462,16 +477,11 @@ body:has(.lightbox[open]) { overflow: hidden; }
 /* Keep the end of the footer readable while the consent banner is open */
 body:has(.consent:not([hidden])) .footer__inner { padding-bottom: 11rem; }
 
-/* Wide screens: a little more room for the one-paragraph privacy notice */
-@media (min-width: 1000px) {
-  .footer__inner { padding-inline: 1.25rem; }
-}
-
 /* Larger screens */
 @media (min-width: 600px) {
   :root { --gutter: 2rem; }
 
-  .hero { padding-top: 5rem; padding-bottom: 6rem; }
+  .hero { padding-top: 5rem; padding-bottom: 4rem; }
   .section { padding-bottom: 6.5rem; }
 
   .actions {
@@ -479,10 +489,7 @@ body:has(.consent:not([hidden])) .footer__inner { padding-bottom: 11rem; }
     justify-content: center;
   }
 
-  .gallery {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1.5rem;
-  }
+  .gallery { --cols: 2; }
 
   .footer__row {
     flex-direction: row;
@@ -499,6 +506,17 @@ body:has(.consent:not([hidden])) .footer__inner { padding-bottom: 11rem; }
   .consent p, .consent__actions { margin: 0; }
   .consent p { max-width: 28rem; }
   .consent__actions { min-width: 16rem; }
+}
+
+/* Wider screens: more photos per row, and more room for the one-paragraph privacy notice */
+@media (min-width: 900px) {
+  .gallery { --cols: 3; }
+}
+@media (min-width: 1000px) {
+  .footer__inner { padding-inline: 1.25rem; }
+}
+@media (min-width: 1600px) {
+  .gallery { --cols: 4; }
 }
 
 @media (prefers-reduced-motion: reduce) {

@@ -24,7 +24,8 @@ The page is complete and works, but these things need to arrive before it is fin
 1. ~~The GA4 measurement ID.~~ Done: `G-WEJ9S352CD` is in `script.js`. Analytics starts counting once the site is live and visitors press Accept.
 2. ~~Federica's logo.~~ Done: it is in the hero.
 3. ~~Photos of her work.~~ Done: 10 photos are in "My recent work". Click one on the page to see it larger.
-4. **Her own words for "About me"**, saved as `assets/about-me.txt`, and **her photo** in `originals/about/`. Until both arrive that section (a blush-pink band with her photo small on one side) is not on the page.
+4. **Federica's photo** for the About section (small and round, beside the text), in `originals/about/`.
+5. **FAQ answers** in `assets/faq.txt`.
 
 When you have any of these, put the files in the right folder and ask Claude to add them. It will write the alt text and wire them in. Tell Claude what each photo shows, in plain words.
 
@@ -47,6 +48,22 @@ When you have any of these, put the files in the right folder and ask Claude to 
 5. When you have finished, go back to Terminal and press **Control + C** to stop it.
 
 To see it as it looks on a phone: in Chrome, right-click the page, choose **Inspect**, then click the small phone and tablet icon at the top of the panel that opens.
+
+## How the search words work (SEO in plain English)
+
+Google reads the words on the page to decide which searches it should show the site for. It looks hardest at a few places, so those are where the main phrases sit. The rule is to write for people first: Google understands related wording, so the page does not need to repeat the same phrase.
+
+| What people might search | Where it appears on the page |
+|---|---|
+| fine line tattoo artist North London | The page title, the main heading (H1) and the meta description (the grey text under the title on Google) |
+| female tattoo artist London | The first sentence of the About section: "I'm a female tattoo artist in North London" |
+| delicate tattoos / tiny tattoo | The About section ("delicate details", "a tiny tattoo that holds a memory") |
+| fine line tattoo London | The closing heading, "Ready for your fine line tattoo?", and the meta description |
+| Federica Aiello | The About heading, the description and the hidden data Google reads about the page |
+
+Other things that help, all already done: a link to the one official address (the `.co.uk`), a description of every photo, a fast page, a phone-friendly layout, a sitemap, and hidden data saying the site belongs to Pink Rodeo Tattoo Club and to Federica, with her Instagram and TikTok. There is deliberately no address or phone number, so the site is not set up as a local shop listing.
+
+Two honest limits: results take weeks to appear after the site goes live, and Search Console (set up below) is where you will see which searches actually bring people.
 
 ## A note on photos and privacy
 
@@ -97,7 +114,7 @@ You can do the same for `click_instagram_follow` if you want follows counted as 
 | `click_email` | Someone taps the email icon under the closing buttons. |
 | `click_tiktok` | Someone taps the TikTok icon under the closing buttons. |
 
-Each event also records where on the page it happened (`hero`, `booking` or `icons`, meaning the round icons under the closing buttons) in a field called `link_location`. To see it in reports: **Admin, Custom definitions, Create custom dimension**, choose scope **Event**, name it "Link location" and type `link_location` as the event parameter.
+Each event also records where on the page it happened (`booking` for the two buttons, or `icons` for the round icons under them) in a field called `link_location`. To see it in reports: **Admin, Custom definitions, Create custom dimension**, choose scope **Event**, name it "Link location" and type `link_location` as the event parameter.
 
 ## Set up Search Console
 
@@ -165,10 +182,11 @@ The look follows Federica's Instagram: light grey, white, one pink and silver de
 |---|---|---|
 | Pearl grey | `#EDEDEF` | Page background |
 | White | `#FFFFFF` | Panels, photo mats, footer |
-| Blush | `#FBEAF2` | The future "About me" band |
+| Blush | `#FBEAF2` | The footer |
+| Light pink | `#F3B8D2` | Thin light pink lines (frame inner line, footer borders) |
 | Logo pink | `#EE6FA6` | Main button, logo glow, frame stars (never for text) |
 | Deep rose | `#C42E73` | All pink text (the logo pink is too pale to read as text) |
 | Charcoal | `#222226` | Body text |
 | Silver | `#7A7F8A` and `#A9ADB6` | Frames, outlines, thin lines |
 
-The frames around the photos are drawn in the stylesheet (no image files): one silver line with notched corners and a small pink star in each corner. The buttons get their 3D look from the stylesheet too.
+The frames around the photos are drawn in the stylesheet (no image files): a thick pink outer line, a thin light pink inner line, square corners and a small star in each corner. The buttons get their 3D look from the stylesheet too.

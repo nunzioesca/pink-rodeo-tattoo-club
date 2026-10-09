@@ -11,7 +11,7 @@ Federica Aiello is a fine line tattoo artist in North London. The page exists to
 
 | Missing | Effect on the page |
 |---|---|
-| `assets/about-me.txt` and her photo | The "About me" section (formerly "Why I tattoo") is left out until Federica's own words and photo arrive. |
+| Her photo for the About section | The About text is on the page; her small round photo is added when supplied. |
 
 Added later: the logo (now in the hero), 10 photos of her work (the "Recent work" section) and the GA4 ID `G-WEJ9S352CD`. One photo (`Fine line butterflies`) was not used because it shows people in underwear; Federica can decide. The images in `assets/` are clean web copies: resized JPEGs with no hidden location data. The full-size originals live in `originals/`, which git ignores and the site never publishes. (Five originals contained GPS coordinates, so they must never be uploaded.)
 
@@ -20,15 +20,26 @@ Decisions made with you: the palette follows Federica's Instagram (pearl grey an
 ## 3. Page structure (single page, `index.html`)
 
 1. **Skip link** (visible on focus): "Skip to content".
-2. **Hero** `<header>`: Federica's logo image (not a heading), `<h1>`, one line, two buttons.
-3. **My recent work** `<section>` with `<h2>`: 10 framed photos.
-4. **My style** `<section>` with `<h2>`.
-5. *(About me: omitted until her words and photo arrive.)*
-6. **Ready for your fine line tattoo?** `<section>` with `<h2>`: what to send (plain numbered lines), two buttons, then the Instagram, TikTok and email icons.
-7. **Footer** `<footer>`: copyright, "Cookie choices" button and the privacy notice.
-8. **Consent banner**: sits right after the skip link in the page order (so keyboard users meet it first), fixed to the bottom of the screen, minimal, Accept and Decline with equal prominence.
+2. **Consent banner**: right after the skip link in the page order (so keyboard users meet it first), fixed to the bottom of the screen, minimal, Accept and Decline with equal prominence.
+3. **Hero**
+- Logo: Federica's logo image
+- h1: Fine line tattoo artist in North London
 
-Heading order: h1, then h2 "My recent work", "My style", ("About me" and "FAQ" when added) and "Ready for your fine line tattoo?". The footer uses a labelled `<nav>` and no extra headings except one h2 "Privacy".
+**About** (h2: Hi, I'm Federica Aiello)
+> I'm a female tattoo artist in North London, and I've been tattooing since 2019. I specialise in fine line: delicate details and clean lines, in tattoos that feel personal to the person wearing them.
+>
+> From a tiny tattoo that holds a memory to a design we create from scratch, every one is made with patience and a light touch.
+>
+> *Small tattoos with personal stories, made to be yours.* (closing line, in the heading font)
+
+"Since 2019" was added at the user's request, overriding the original no-years rule.
+
+**My recent work** (h2): 10 photos in frames. Clicking a photo opens a larger copy in a viewer (previous and next buttons, arrow keys, Escape or the close button to leave).
+
+**Ready for your fine line tattoo?** `<section>`: what to send (plain numbered lines), two buttons, then the Instagram, TikTok and email icons.
+8. **Footer** `<footer>` on light pink: copyright, "Cookie choices" button and the privacy notice.
+
+Heading order: h1, then h2 "Hi, I'm Federica Aiello", "My recent work", ("FAQ" when added), "Ready for your fine line tattoo?" and "Privacy". The footer uses a labelled `<nav>` and no extra headings except one h2 "Privacy".
 
 ## 4. Copy (British English, first person as Federica; revised 7 October 2026)
 
@@ -62,7 +73,7 @@ Buttons: **Message me on Instagram** and **Follow me on Instagram**. Under them,
 **Footer** `<footer>`: Instagram, TikTok and email icons, privacy notice, "Cookie choices" button.
 8. **Consent banner**: sits right after the skip link in the page order (so keyboard users meet it first), fixed to the bottom of the screen, minimal, Accept and Decline with equal prominence.
 
-Heading order: h1, then h2 "My recent work", "My style", ("About me" and "FAQ" when added) and "Ready for your fine line tattoo?". The footer uses a labelled `<nav>` and no extra headings except one h2 "Privacy".
+Heading order: h1, then h2 "Hi, I'm Federica Aiello", "My recent work", ("FAQ" when added), "Ready for your fine line tattoo?" and "Privacy". The footer uses a labelled `<nav>` and no extra headings except one h2 "Privacy".
 
 ## 4. Copy (British English, first person as Federica; revised 7 October 2026)
 
@@ -107,20 +118,20 @@ Her Instagram is very light cool grey and white, black-and-white photography and
 Tokens (CSS custom properties at the top of `styles.css`):
 - `--grey: #EDEDEF` pearl grey page background.
 - `--white: #FFFFFF` panels, photo mats, footer.
-- `--blush: #FBEAF2` the "About me" band, once her words and photo arrive.
+- `--blush: #FBEAF2` the footer, and a possible band elsewhere. `--pink-soft: #F3B8D2` light pink lines (frame inner line, footer borders).
 - `--pink: #EE6FA6` her logo pink: main button fill, logo glow, stars.
 - `--rose: #C42E73` deeper pink for all pink text (4.5:1 on grey, 5.3:1 on white). Bright pink is never used for text because it is only 2.4:1 on grey.
 - `--ink: #222226` charcoal body text (13.6:1 on grey).
 - `--silver: #7A7F8A` outer frame line and secondary button outline (3.4:1 on grey), `--silver-light: #A9ADB6` inner frame line.
 
 Details:
-- **Silver Victorian frame:** one thick silver outer line, notched (concave) corners and a small pink four-point star in each corner. Drawn as one tiny inline SVG used as a CSS `border-image` (no extra file to download). Photos sit on a white mat inside it. Used for every photo and in the photo viewer.
+- **Photo frame:** the first frame design again: square corners, a thick outer line (logo pink `#EE6FA6`), a thin inner line (light pink `#F3B8D2`) and a small deep rose star in each corner. Drawn as one tiny inline SVG used as a CSS `border-image` (no extra file to download). Photos sit on a white mat inside it. Used for every photo and in the photo viewer.
 - **Section titles:** deep rose Didot Bold with a small silver rule and a pink star beneath.
 - **Buttons (3D):** a lit top edge, a solid lip underneath and a soft shadow, so they look pressable; on press they sink onto the lip. Primary: pink gradient (`#F47FB2` to `#E8639C`) with charcoal text (at least 5:1 contrast) and a deep-pink lip. Secondary: white-to-pale-grey face with a silver outline and silver lip. A tiny movement on hover and press, switched off for visitors who prefer reduced motion.
 - **Logo:** Federica's logo file in a round crop with a soft static pink halo (no flicker).
 - **Fonts:** headings use **Didot** (Federica's choice). Didot is a licensed font that is built into Macs, iPhones and iPads, so it shows there with no download. Everyone else gets **Bodoni Moda 400 and 700**, a free lookalike from Google Fonts (downloaded only when Didot is missing). Body text is Jost 400 and 500. One Google Fonts request with `display=swap`, `preconnect`, loaded without blocking the first paint. Showing the real Didot on every device would need a purchased web font licence.
-- **Footer:** full-width white strip. Social links and the copyright on one row, then the privacy notice across the whole page width in small type. On a laptop or desktop screen that is about two lines; on a phone it necessarily wraps more.
-- **About me** (replaces "Why I tattoo"): blush band, Federica's photo small and round in a silver frame on one side, her own words beside it. Her words come from `assets/about-me.txt` (`why-i-tattoo.txt` is also accepted). Her photo goes in `originals/about/` and is resized and stripped of hidden data like the gallery photos.
+- **Footer:** full-width strip in light pink (`--blush`, `#FBEAF2`). Social links and the copyright on one row, then the privacy notice across the whole page width in small type. On a laptop or desktop screen that is about two lines; on a phone it necessarily wraps more.
+- **About:** at the top under the H1, on the page background. Her small round photo (in a pink-and-silver ring) will sit on one side once supplied: it goes in `originals/about/` and is resized and stripped of hidden data like the gallery photos.
 - Mobile first at 375px, buttons at least 48px tall, visible 3px rose focus rings, `prefers-reduced-motion` respected.
 
 ## 6. SEO
@@ -143,8 +154,8 @@ Details:
 
 | Event name | Element | Extra data (`data-location`) |
 |---|---|---|
-| `click_dm` | "Message me on Instagram" buttons (hero, booking) | `hero`, `booking` |
-| `click_instagram_follow` | "Follow me on Instagram" buttons and the Instagram icon under the closing buttons | `hero`, `booking`, `icons` |
+| `click_dm` | "Message me on Instagram" button (closing section) | `booking` |
+| `click_instagram_follow` | "Follow me on Instagram" button and the Instagram icon under the closing buttons | `booking`, `icons` |
 | `click_email` | email icon under the closing buttons | `icons` |
 | `click_tiktok` | TikTok icon under the closing buttons | `icons` |
 
