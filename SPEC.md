@@ -131,7 +131,7 @@ Details:
 - **Logo:** Federica's logo file in a round crop with a soft static pink halo (no flicker).
 - **Fonts:** headings use **Didot** (Federica's choice). Didot is a licensed font that is built into Macs, iPhones and iPads, so it shows there with no download. Everyone else gets **Bodoni Moda 400 and 700**, a free lookalike from Google Fonts (downloaded only when Didot is missing). Body text is Jost 400 and 500. One Google Fonts request with `display=swap`, `preconnect`, loaded without blocking the first paint. Showing the real Didot on every device would need a purchased web font licence.
 - **Footer:** full-width strip in light pink (`--blush`, `#FBEAF2`). Social links and the copyright on one row, then the privacy notice across the whole page width in small type. On a laptop or desktop screen that is about two lines; on a phone it necessarily wraps more.
-- **About:** at the top under the H1, on the page background. Her small round photo (in a pink-and-silver ring) will sit on one side once supplied: it goes in `originals/about/` and is resized and stripped of hidden data like the gallery photos.
+- **About:** at the top under the H1, on the page background. Her own photo is not clickable and never opens in the photo viewer (only the work photos do). Her small round photo (in a pink-and-silver ring) will sit on one side once supplied: it goes in `originals/about/` and is resized and stripped of hidden data like the gallery photos.
 - Mobile first at 375px, buttons at least 48px tall, visible 3px rose focus rings, `prefers-reduced-motion` respected.
 
 ## 6. SEO
