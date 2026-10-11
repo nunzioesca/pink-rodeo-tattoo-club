@@ -13,7 +13,7 @@ Federica Aiello is a fine line tattoo artist in North London. The page exists to
 |---|---|
 | Her photo for the About section | The About text is on the page; her small round photo is added when supplied. |
 
-Added later: the logo (now in the hero), 10 photos of her work (the "Recent work" section) and the GA4 ID `G-WEJ9S352CD`. One photo (`Fine line butterflies`) was not used because it shows people in underwear; Federica can decide. The images in `assets/` are clean web copies: resized JPEGs with no hidden location data. The full-size originals live in `originals/`, which git ignores and the site never publishes. (Five originals contained GPS coordinates, so they must never be uploaded.)
+Added later: the logo (now in the hero), 10 photos of her work (the "Recent work" section) and the GA4 ID `G-WEJ9S352CD`. The butterflies photo and the pumpkin-with-bow photo were added on 11 October at Federica's and the clients' request. The images in `assets/` are clean web copies: resized JPEGs with no hidden location data. The full-size originals live in `originals/`, which git ignores and the site never publishes. (Five originals contained GPS coordinates, so they must never be uploaded.)
 
 Decisions made with you: the palette follows Federica's Instagram (pearl grey and rose); the copy is in first person and may say "female tattoo artist"; the butterflies photo is not used; testing with Lighthouse and the W3C validator.
 
@@ -34,7 +34,7 @@ Decisions made with you: the palette follows Federica's Instagram (pearl grey an
 
 "Since 2019" was added at the user's request, overriding the original no-years rule.
 
-**My recent work** (h2): 10 photos in frames. Clicking a photo opens a larger copy in a viewer (previous and next buttons, arrow keys, Escape or the close button to leave).
+**My recent work** (h2): 12 photos in frames, in a fixed order (cowboy boot, stars, pumpkin with bow, Luna, boots stamp, butterflies, clock tower, lemon stamp, two stars, four, numbers, forearm script). Clicking a photo opens a larger copy in a viewer (previous and next buttons, arrow keys, Escape or the close button to leave).
 
 **Ready for your fine line tattoo?** `<section>`: what to send (plain numbered lines), two buttons, then the Instagram, TikTok and email icons.
 8. **Footer** `<footer>` on light pink: copyright, "Cookie choices" button and the privacy notice.
@@ -125,7 +125,7 @@ Tokens (CSS custom properties at the top of `styles.css`):
 - `--silver: #7A7F8A` outer frame line and secondary button outline (3.4:1 on grey), `--silver-light: #A9ADB6` inner frame line.
 
 Details:
-- **Photo frame:** the first frame design again: square corners, a thick outer line (logo pink `#EE6FA6`), a thin inner line (light pink `#F3B8D2`) and a small deep rose star in each corner. Drawn as one tiny inline SVG used as a CSS `border-image` (no extra file to download). Photos sit on a white mat inside it. Used for every photo and in the photo viewer.
+- **Photo frame:** the first frame design again: square corners, a thick outer line (logo pink `#EE6FA6`), a thin inner line (light pink `#F3B8D2`) and a small deep rose star in each corner. Drawn as one tiny inline SVG used as a CSS `border-image` (no extra file to download). Photos sit on a white mat inside it. Used for every photo and in the photo viewer. On phones the photo frames are slimmer (11px) so two photos per row stay large enough.
 - **Section titles:** deep rose Didot Bold with a small silver rule and a pink star beneath.
 - **Buttons (3D):** a lit top edge, a solid lip underneath and a soft shadow, so they look pressable; on press they sink onto the lip. Primary: pink gradient (`#F47FB2` to `#E8639C`) with charcoal text (at least 5:1 contrast) and a deep-pink lip. Secondary: white-to-pale-grey face with a silver outline and silver lip. A tiny movement on hover and press, switched off for visitors who prefer reduced motion.
 - **Logo:** Federica's logo file in a round crop with a soft static pink halo (no flicker).
@@ -171,7 +171,7 @@ robots.txt
 sitemap.xml
 assets/
   logo/             Federica's logo, cropped square and resized (480px)
-  work/             10 photos, each in 640px, 960px and 1400px widths (the 1400px copy opens in the viewer)
+  work/             12 photos, each in 640px, 960px and 1400px widths (the 1400px copy opens in the viewer)
   favicon.svg       small white "PR" on pink, the only file I draw
 README.md           plain-English guide
 SPEC.md             this document

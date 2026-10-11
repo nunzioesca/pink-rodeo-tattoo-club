@@ -238,12 +238,12 @@ a { color: inherit; }
   background-clip: padding-box;
 }
 
-/* Photo gallery: 1 column on phones, then 2, 3 and 4 as the screen widens.
+/* Photo gallery: 2 columns on phones and tablets, 3 on laptops, 4 on very wide screens.
    Flex (not grid) so an unfinished last row is centred instead of left-aligned. */
 .section--gallery { max-width: 78rem; }
 .gallery {
-  --cols: 1;
-  --gap: 1.5rem;
+  --cols: 2;
+  --gap: 0.75rem;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -477,6 +477,15 @@ body:has(.lightbox[open]) { overflow: hidden; }
 /* Keep the end of the footer readable while the consent banner is open */
 body:has(.consent:not([hidden])) .footer__inner { padding-bottom: 11rem; }
 
+/* Phones: slimmer frames and side margins so two photos per row stay big enough */
+@media (max-width: 599px) {
+  .section--gallery { padding-inline: 0.75rem; }
+  .frame--photo {
+    border-width: 11px;
+    border-image-width: 11px;
+  }
+}
+
 /* Larger screens */
 @media (min-width: 600px) {
   :root { --gutter: 2rem; }
@@ -489,7 +498,7 @@ body:has(.consent:not([hidden])) .footer__inner { padding-bottom: 11rem; }
     justify-content: center;
   }
 
-  .gallery { --cols: 2; }
+  .gallery { --gap: 1.5rem; }
 
   .footer__row {
     flex-direction: row;
