@@ -1,5 +1,7 @@
 # Pink Rodeo Tattoo Club website
 
+> **All rights reserved.** The photos, logo, text and design belong to Pink Rodeo Tattoo Club and Federica Aiello and may not be reused without permission (see `LICENSE`).
+
 A one-page website for Pink Rodeo Tattoo Club, the fine line tattoo brand of Federica Aiello in North London. The page exists to get people to message Federica on Instagram and follow her.
 
 The site is plain files: one page, one stylesheet, one small script. There is nothing to install and no host is chosen yet, so it will work on any ordinary web host.
@@ -156,17 +158,55 @@ Run it again once the site is live, as speed on a real host can differ.
 2. Open `index.html` in a text editor, select all, copy, and paste it into the box.
 3. Click **Check**. Send anything it reports to Claude.
 
-## Put the site online (deploy)
+## Put the site online with GitHub Pages
 
-You have not picked a host yet, and nothing here is tied to one. The site is a folder of ordinary files, so any "static" host will do. When you choose one:
+The site is hosted by GitHub itself, for free, straight from this project. Every time you push a change in GitHub Desktop, the live site updates by itself within a minute or two. This needs the repository to be **public** (GitHub's free plan does not host private projects).
 
-- Upload or connect the whole folder so that `index.html` is the page at the very top of `pinkrodeotattooclub.co.uk`.
-- Turn on HTTPS (every modern host does this for free).
-- Make the `.com` address redirect to `https://pinkrodeotattooclub.co.uk` using the host's or registrar's redirect setting. The page already tells Google that the `.co.uk` address is the main one.
-- Check that `https://pinkrodeotattooclub.co.uk/robots.txt` and `/sitemap.xml` open in your browser.
-- Test the GA4 steps above on the live site.
+### 1. Switch on GitHub Pages
 
-Tell Claude which host you chose and it will give click-by-click steps.
+1. Go to your repository on github.com and click **Settings** (the tab on the right of the row of tabs).
+2. In the left menu click **Pages**.
+3. Under **Build and deployment**, set **Source** to **Deploy from a branch**.
+4. Under **Branch**, choose **main** and the folder **/ (root)**, then click **Save**.
+5. Wait a minute and refresh. At the top you will see "Your site is live at https://nunzioesca.github.io/pink-rodeo-tattoo-club/". Open it to check the site looks right.
+
+### 2. Connect your own domain
+
+1. Still in **Settings, Pages**, find **Custom domain**, type `pinkrodeotattooclub.co.uk` and click **Save**. GitHub adds a small file called `CNAME` to the project. In GitHub Desktop click **Fetch origin** and then **Pull origin** so your computer has it too.
+2. Sign in to the company where you bought the domain and open its **DNS settings** (the same place you used for the Search Console record). Add these records:
+
+| Type | Host (or Name) | Value |
+|---|---|---|
+| A | `@` | `185.199.108.153` |
+| A | `@` | `185.199.109.153` |
+| A | `@` | `185.199.110.153` |
+| A | `@` | `185.199.111.153` |
+| CNAME | `www` | `nunzioesca.github.io` |
+
+   Some providers also want the four IPv6 addresses as `AAAA` records on `@`: `2606:50c0:8000::153`, `2606:50c0:8001::153`, `2606:50c0:8002::153` and `2606:50c0:8003::153`. They are optional.
+3. If your provider already has other `A` records on `@` (often a "parking page"), delete those so only the four above remain. Keep the TXT record from Search Console.
+4. Back in **Settings, Pages**, wait for the green tick next to the domain (it can take from a few minutes up to a day). Then tick **Enforce HTTPS**.
+5. Open `https://pinkrodeotattooclub.co.uk`. GitHub also sends `www.pinkrodeotattooclub.co.uk` to the main address automatically.
+
+### 3. The `.com` address
+
+GitHub Pages cannot redirect a second domain by itself. In your domain provider's settings, find **URL forwarding** or **redirect** for `pinkrodeotattooclub.com` and forward it, as a "permanent (301)" redirect, to `https://pinkrodeotattooclub.co.uk`.
+
+### 4. After it is live
+
+- Check that `https://pinkrodeotattooclub.co.uk/robots.txt` and `/sitemap.xml` open.
+- Run Lighthouse again on the live address (steps above).
+- Do the GA4 test (accept the banner, tap the main button, look in Realtime).
+- Finish the Search Console steps and submit the sitemap.
+- Paste the live address into a WhatsApp chat to check the link preview picture.
+
+### Updating the site later
+
+Change a file (or ask Claude to), commit in GitHub Desktop and click **Push origin**. GitHub rebuilds the site by itself.
+
+### Suggestions from visitors
+
+Because the project is public, anyone with a GitHub account can open an "issue" to suggest something. Nothing changes on the site unless you accept it. To switch this off: **Settings**, then under **Features** untick **Issues**.
 
 ## Privacy notice (not legal advice)
 
