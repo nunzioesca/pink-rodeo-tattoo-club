@@ -217,6 +217,34 @@ a { color: inherit; }
 .section p { font-size: 1.125rem; }
 .section p + p { margin-top: 1.125rem; }
 
+/* About: a light pink box with Federica's round photo sitting on its top edge */
+.section--about { padding-top: 3.75rem; }
+.about-box {
+  position: relative;
+  padding: 4.75rem 1.25rem 1.75rem;
+  background: var(--blush);
+  border: 1px solid var(--pink-soft);
+  border-radius: 0.5rem;
+}
+.about-box__photo {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 7.5rem;
+  height: 7.5rem;
+  transform: translate(-50%, -50%);
+  object-fit: cover;
+  border: 3px solid var(--pink);
+  border-radius: 50%;
+  background: var(--white);
+  box-shadow: 0 0 0 4px var(--white), 0 0 0 5px var(--pink-soft);
+}
+.about-box h2::after { display: none; }
+.about-box h2 {
+  margin-bottom: 1rem;
+  font-size: clamp(1.5rem, 5.5vw, 1.875rem);
+}
+
 /* The closing line of the About text, in the heading font */
 .section .about__closing {
   margin-top: 1.75rem;
@@ -491,6 +519,8 @@ body:has(.consent:not([hidden])) .footer__inner { padding-bottom: 11rem; }
   :root { --gutter: 2rem; }
 
   .hero { padding-top: 5rem; padding-bottom: 4rem; }
+  .about-box { padding: 5.25rem 2.25rem 2.25rem; }
+  .about-box__photo { width: 8.5rem; height: 8.5rem; }
   .section { padding-bottom: 6.5rem; }
 
   .actions {
