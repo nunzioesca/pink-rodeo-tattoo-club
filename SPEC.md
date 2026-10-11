@@ -25,7 +25,7 @@ Decisions made with you: the palette follows Federica's Instagram (pearl grey an
 - h1: Fine line tattoo artist in North London
 
 **About** (h2: Hi, I'm Federica Aiello)
-> I'm a female tattoo artist in North London, and I've been tattooing since 2019. I specialise in fine line: delicate details and clean lines, in tattoos that feel personal to the person wearing them.
+> I'm a female tattoo artist, and I've been tattooing since 2019. I specialise in fine line: delicate details and clean lines, in tattoos that feel personal to the person wearing them.
 >
 > From a tiny tattoo that holds a memory to a design we create from scratch, every one is made with patience and a light touch.
 >
@@ -35,7 +35,7 @@ Decisions made with you: the palette follows Federica's Instagram (pearl grey an
 
 **My recent work** (h2): 12 photos in frames, in a fixed order (cowboy boot, stars, pumpkin with bow, Luna, boots stamp, butterflies, clock tower, lemon stamp, two stars, four, numbers, forearm script). Clicking a photo opens a larger copy in a viewer (previous and next buttons, arrow keys, Escape or the close button to leave).
 
-**Ready for your fine line tattoo?** `<section>`: what to send (plain numbered lines), two buttons, then the Instagram, TikTok and email icons.
+**Ready for your fine line tattoo?** `<section>`: what to send (four bullet points), two buttons, then the Instagram, TikTok and email icons.
 8. **Footer** `<footer>` on light pink: copyright, "Cookie choices" button and the privacy notice.
 
 Heading order: h1, then h2 "Hi, I'm Federica Aiello", "My recent work", ("FAQ" when added), "Ready for your fine line tattoo?" and "Privacy". The footer uses a labelled `<nav>` and no extra headings except one h2 "Privacy".
@@ -61,7 +61,7 @@ Heading order: h1, then h2 "Hi, I'm Federica Aiello", "My recent work", ("FAQ" w
 **Ready for your fine line tattoo?** (h2, the closing section)
 > I work by appointment in North London, on Wednesdays, Fridays and Saturdays. To enquire, send me a DM on Instagram with:
 
-Plain centred numbered lines (no box, like "My style"): 1 Your idea, 2 The placement, 3 The approximate size, 4 A reference picture, if you have one.
+Four bullet points on one line (they wrap on narrow phones): Your idea, The placement, The approximate size, A reference picture, if you have one. No box.
 
 > I'll get back to you with availability and a quote.
 
@@ -130,7 +130,7 @@ Details:
 - **Logo:** Federica's logo file in a round crop with a soft static pink halo (no flicker).
 - **Fonts:** headings use **Didot** (Federica's choice). Didot is a licensed font that is built into Macs, iPhones and iPads, so it shows there with no download. Everyone else gets **Bodoni Moda 400 and 700**, a free lookalike from Google Fonts (downloaded only when Didot is missing). Body text is Jost 400 and 500. One Google Fonts request with `display=swap`, `preconnect`, loaded without blocking the first paint. Showing the real Didot on every device would need a purchased web font licence.
 - **Footer:** full-width strip in light pink (`--blush`, `#FBEAF2`). Social links and the copyright on one row, then the privacy notice across the whole page width in small type. On a laptop or desktop screen that is about two lines; on a phone it necessarily wraps more.
-- **About:** at the top under the H1, in a light pink box (`--blush`, thin `--pink-soft` border, rounded corners). Federica's round photo sits centred on the top edge of the box, in a logo-pink ring with a thin light pink outer ring. The photo is not a link and never opens in the photo viewer. It is a 480px square crop of her portrait with all hidden data removed (`assets/about/federica-480.jpg`); the original stays in `originals/logo/`.
+- **About:** at the top under the H1, in a light pink box (`--blush`, thin `--pink-soft` border, rounded corners). Federica's round photo sits centred on the top edge of the box, in a logo-pink ring with a thin light pink outer ring. The photo is not a link and never opens in the photo viewer. It is a 480px square crop of her portrait (the widest square the photo allows, so her shoulders and hand show too) with all hidden data removed (`assets/about/federica-480.jpg`); the original stays in `originals/logo/`.
 - Mobile first at 375px, buttons at least 48px tall, visible 3px rose focus rings, `prefers-reduced-motion` respected.
 
 ## 6. SEO

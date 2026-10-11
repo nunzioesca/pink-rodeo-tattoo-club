@@ -293,29 +293,30 @@ a { color: inherit; }
   object-fit: cover;
 }
 
-/* "Ready for your tattoo?": what to send, as plain centred lines like the rest of the page */
+/* "Ready for your tattoo?": what to send, as bullet points on one line (they wrap on narrow screens) */
 .booking__list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.375rem 1.5rem;
   margin: 1.25rem 0;
   padding: 0;
   list-style: none;
-  counter-reset: step;
 }
 .booking__list li {
   display: flex;
-  align-items: baseline;
-  justify-content: center;
-  gap: 0.75rem;
-  padding: 0.25rem 0;
+  align-items: center;
+  gap: 0.625rem;
   font-size: 1.125rem;
-  counter-increment: step;
 }
 .booking__list li::before {
-  content: counter(step);
-  color: var(--rose);
-  font-family: var(--font-heading);
-  font-size: 1.5rem;
-  font-weight: 700;
-  line-height: 1;
+  content: "";
+  flex: none;
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  background: var(--pink);
+  box-shadow: 0 0 0 2px var(--pink-soft);
 }
 .booking__note {
   margin-top: 1.25rem;
@@ -548,6 +549,10 @@ body:has(.consent:not([hidden])) .footer__inner { padding-bottom: 11rem; }
 }
 
 /* Wider screens: more photos per row, and more room for the one-paragraph privacy notice */
+@media (min-width: 840px) {
+  /* Let the four bullet points run a little wider than the text above, so they sit on one line */
+  .booking__list { margin-inline: -7.5rem; }
+}
 @media (min-width: 900px) {
   .gallery { --cols: 3; }
 }
