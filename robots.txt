@@ -1,4 +1,7 @@
 User-agent: *
 Allow: /
+Disallow: /SPEC.md
+Disallow: /README.md
+Disallow: /LICENSE
 
 Sitemap: https://pinkrodeotattooclub.co.uk/sitemap.xml
