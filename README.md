@@ -26,7 +26,7 @@ The page is complete and works, but these things need to arrive before it is fin
 1. ~~The GA4 measurement ID.~~ Done: `G-WEJ9S352CD` is in `script.js`. Analytics starts counting once the site is live and visitors press Accept.
 2. ~~Federica's logo.~~ Done: it is in the hero.
 3. ~~Photos of her work.~~ Done: 12 photos are in "My recent work". Click one on the page to see it larger.
-4. ~~Federica's photo for the About section.~~ Done: it sits on the top edge of the light pink About box (and is not clickable).
+4. ~~Federica's photo for the About section.~~ Done: a tall oval sits on the top edge of the light pink About box (and is not clickable).
 5. **FAQ answers** in `assets/faq.txt`.
 
 When you have any of these, put the files in the right folder and ask Claude to add them. It will write the alt text and wire them in. Tell Claude what each photo shows, in plain words.
