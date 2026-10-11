@@ -113,6 +113,14 @@ a { color: inherit; }
   font-size: clamp(1.875rem, 7.5vw, 2.75rem);
 }
 
+/* Page not found (404.html) */
+.notfound__text {
+  max-width: 28rem;
+  margin: 1.25rem auto 0;
+  font-size: 1.125rem;
+  text-wrap: balance;
+}
+
 /* Buttons */
 .actions {
   display: flex;

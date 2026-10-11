@@ -1,46 +1,38 @@
 # SPEC: Pink Rodeo Tattoo Club one-page website
 
-Project folder: `~/Desktop/pink-rodeo-tattoo-club` (created, with empty `assets/logo` and `assets/work`).
-On approval this document is saved as `SPEC.md` in that folder, and then I build.
+Project folder: `~/Desktop/pink-rodeo-tattoo-club`. Live at https://pinkrodeotattooclub.co.uk (GitHub Pages, public repository). This document records what the site is and why; the README explains how to run and update it.
 
 ## 1. Context
 
-Federica Aiello is a fine line tattoo artist in North London. The page exists to get visitors to DM her on Instagram and follow her. It also has to rank for local searches and be measurable in GA4 and Search Console, as part of a marketing portfolio. Plain HTML, CSS and JavaScript. No build step, no framework, no host-specific files.
+Federica Aiello is a fine line tattoo artist in North London. The page exists to get visitors to DM her on Instagram and follow her. It also has to rank for local searches and be measurable in GA4 and Search Console, as part of a marketing portfolio. Plain HTML, CSS and JavaScript. No build step, no framework.
 
-## 2. What is missing right now (sections left out, per the brief)
+## 2. Status of the material
 
-| Missing | Effect on the page |
+| Item | Status |
 |---|---|
+| Logo | Done, in the hero |
+| 12 photos of her work | Done, in the gallery (butterflies and pumpkin with bow added 11 October) |
+| About text and portrait | Done |
+| GA4 ID `G-WEJ9S352CD` | Done, in `script.js` |
+| Link-preview image | Done, `assets/social-preview.jpg` |
+| FAQ | Waiting for Federica's answers (`assets/faq.txt`) |
 
-Added later: the logo (now in the hero), 10 photos of her work (the "Recent work" section) and the GA4 ID `G-WEJ9S352CD`. The butterflies photo and the pumpkin-with-bow photo were added on 11 October at Federica's and the clients' request. The images in `assets/` are clean web copies: resized JPEGs with no hidden location data. The full-size originals live in `originals/`, which git ignores and the site never publishes. (Five originals contained GPS coordinates, so they must never be uploaded.)
-
-Decisions made with you: the palette follows Federica's Instagram (pearl grey and rose); the copy is in first person and may say "female tattoo artist"; the butterflies photo is not used; testing with Lighthouse and the W3C validator.
+Decisions made with the user, overriding the original brief: the palette follows Federica's Instagram (pearl grey and rose); the copy is in first person and may say "female tattoo artist"; the butterflies photo is used; "since 2019" is included; the repository is public. Full-size originals live in `originals/`, which git ignores and the site never publishes (five originals contained GPS coordinates, so they must never be uploaded).
 
 ## 3. Page structure (single page, `index.html`)
 
 1. **Skip link** (visible on focus): "Skip to content".
 2. **Consent banner**: right after the skip link in the page order (so keyboard users meet it first), fixed to the bottom of the screen, minimal, Accept and Decline with equal prominence.
-3. **Hero**
-- Logo: Federica's logo image
-- h1: Fine line tattoo artist in North London
-
-**About** (h2: Hi, I'm Federica Aiello)
-> I'm a female tattoo artist, and I've been tattooing since 2019. I specialise in fine line: delicate details and clean lines, in tattoos that feel personal to the person wearing them.
->
-> From a tiny tattoo that holds a memory to a design we create from scratch, every one is made with patience and a light touch.
->
-> *Small tattoos with personal stories, made to be yours.* (closing line, in the heading font)
-
-"Since 2019" was added at the user's request, overriding the original no-years rule.
-
-**My recent work** (h2): 12 photos in frames, in a fixed order (cowboy boot, stars, pumpkin with bow, Luna, boots stamp, butterflies, clock tower, lemon stamp, two stars, four, numbers, forearm script). Clicking a photo opens a larger copy in a viewer (previous and next buttons, arrow keys, Escape or the close button to leave).
-
-**Ready for your fine line tattoo?** `<section>`: what to send (four bullet points), two buttons, then the Instagram, TikTok and email icons.
+3. **Hero** `<header>`: Federica's logo image and the `<h1>`. No buttons here (the calls to action are only in the closing section).
+4. **About** `<section>`: a light pink box with her tall oval portrait on its top edge; who she is, since when, what she does.
+5. **My recent fine line tattoos** `<section>`: 12 framed photos (2 per row on phones and tablets, 3 on laptops from 900px, 4 from 1600px; an unfinished last row is centred).
+6. *(FAQ: collapsible questions, before the closing section, once Federica's answers arrive.)*
+7. **Ready for your fine line tattoo?** `<section>`: what to send (four bullet points), two buttons, then the Instagram, TikTok and email icons.
 8. **Footer** `<footer>` on light pink: copyright, "Cookie choices" button and the privacy notice.
 
-Heading order: h1, then h2 "Hi, I'm Federica Aiello", "My recent work", ("FAQ" when added), "Ready for your fine line tattoo?" and "Privacy". The footer uses a labelled `<nav>` and no extra headings except one h2 "Privacy".
+Heading order: h1, then h2 "Hi, I'm Federica Aiello", "My recent fine line tattoos", ("FAQ" when added), "Ready for your fine line tattoo?" and "Privacy".
 
-## 4. Copy (British English, first person as Federica; revised 7 October 2026)
+## 4. Copy (British English, first person as Federica; last revised 12 October 2026)
 
 **Title tag** (49 characters): `Fine Line Tattoo Artist North London | Pink Rodeo`
 
@@ -49,14 +41,17 @@ Heading order: h1, then h2 "Hi, I'm Federica Aiello", "My recent work", ("FAQ" w
 **Hero**
 - Logo: Federica's logo image
 - h1: Fine line tattoo artist in North London
-- Line: I'm Federica Aiello, and I make delicate tattoos at Pink Rodeo Tattoo Club, by appointment.
-- Primary button (filled pink): **Message me on Instagram** (DM link)
-- Secondary button (silver outline): **Follow me on Instagram**
 
-**My recent work** (h2): 10 photos in silver frames. Clicking a photo opens a larger copy in a viewer (previous and next buttons, arrow keys, Escape or the close button to leave).
+**About** (h2: Hi, I'm Federica Aiello), in a light pink box with her tall oval portrait on its top edge
+> I'm a female tattoo artist, and I've been tattooing since 2019. I specialise in fine line: delicate details and clean lines, in tattoos that feel personal to the person wearing them.
+>
+> From a tiny tattoo that holds a memory to a design we create from scratch, every one is made with patience and a light touch.
+>
+> *Small tattoos with personal stories, made to be yours.* (closing line, in the heading font)
 
-**My style** (h2)
-> I'm a female tattoo artist in London, and fine line is what I do: light, delicate lines with a soft, refined finish. A tiny tattoo suits the style as well as a larger piece.
+"Since 2019" was added at the user's request, overriding the original no-years rule.
+
+**My recent fine line tattoos** (h2): 12 photos in frames, in a fixed order (cowboy boot, stars, pumpkin with bow, Luna, boots stamp, butterflies, clock tower, lemon stamp, two stars, four, numbers, forearm script). Clicking a photo opens a larger copy in a viewer (previous and next buttons, arrow keys, Escape or the close button to leave).
 
 **Ready for your fine line tattoo?** (h2, the closing section)
 > I work by appointment in North London, on Wednesdays, Fridays and Saturdays. To enquire, send me a DM on Instagram with:
@@ -69,46 +64,16 @@ Four bullet points on one line (they wrap on narrow phones): Your idea, The plac
 
 Buttons: **Message me on Instagram** and **Follow me on Instagram**. Under them, three round icon buttons: Instagram (Instagram gradient), TikTok (black with its red and cyan edges) and email (rose).
 
-**Footer** `<footer>`: Instagram, TikTok and email icons, privacy notice, "Cookie choices" button.
-8. **Consent banner**: sits right after the skip link in the page order (so keyboard users meet it first), fixed to the bottom of the screen, minimal, Accept and Decline with equal prominence.
-
-Heading order: h1, then h2 "Hi, I'm Federica Aiello", "My recent work", ("FAQ" when added), "Ready for your fine line tattoo?" and "Privacy". The footer uses a labelled `<nav>` and no extra headings except one h2 "Privacy".
-
-## 4. Copy (British English, first person as Federica; revised 7 October 2026)
-
-**Title tag** (49 characters): `Fine Line Tattoo Artist North London | Pink Rodeo`
-
-**Meta description** (148 characters): `I'm Federica Aiello, a fine line tattoo artist in North London. Delicate tattoos at Pink Rodeo Tattoo Club, by appointment. Message me on Instagram.`
-
-**Hero**
-- Logo: Federica's logo image
-- h1: Fine line tattoo artist in North London
-- Line: I'm Federica Aiello, and I make delicate tattoos at Pink Rodeo Tattoo Club, by appointment.
-- Primary button (filled pink): **Message me on Instagram** (DM link)
-- Secondary button (silver outline): **Follow me on Instagram**
-
-**My recent work** (h2): 10 photos in silver frames. Clicking a photo opens a larger copy in a viewer (previous and next buttons, arrow keys, Escape or the close button to leave).
-
-**My style** (h2)
-> I'm a female tattoo artist based in North London, and fine line is what I do: light, delicate lines with a soft, refined finish. A tiny tattoo suits the style as well as a larger piece. If you have an idea in mind, send it to me on Instagram.
-
-**How to book** (h2)
-> I work by appointment in North London, on Wednesdays, Fridays and Saturdays only. To book a fine line tattoo in London, send me a message on Instagram.
-
-Panel (silver Victorian frame):
-- **Days:** Wednesday, Friday and Saturday
-- **Clients:** 18 or over, with photo ID
-
-Buttons again: **Message me on Instagram** and **Follow me on Instagram**.
-
 **Footer**
-- One row: © 2026 Pink Rodeo Tattoo Club and the "Cookie choices" button. (The Instagram, TikTok and email icons moved up under the closing buttons.)
+- One row: © 2026 Pink Rodeo Tattoo Club and the "Cookie choices" button.
 - **Privacy** (h2, small, runs in with the text):
   > I use Google Analytics to count visits and link clicks, only if you press Accept; until then nothing is sent and no analytics cookies are set. This site has no forms and I collect no names or contact details. Your choice is saved on your device. Google Fonts sees your IP address when the page loads, and my host may keep standard server logs. The Instagram, TikTok and email links go to services with their own privacy policies.
 - Note to you (not on the page): this is plain-English drafting, **not legal advice**.
 
 **Consent banner**
 > I use Google Analytics to see how this page is used. It only runs if you accept. [Accept] [Decline]
+
+**404 page** (`404.html`, not indexed): "This page isn't here", one short line and a "Back to the home page" button.
 
 ## 5. Design (revised 7 October 2026 to match Federica's Instagram)
 
@@ -164,6 +129,7 @@ Details:
 
 ```
 index.html          the page (inline critical bits: consent default, JSON-LD)
+404.html            branded page for addresses that do not exist (not indexed)
 styles.css          design tokens, layout, frames, buttons, banner
 script.js           GA ID block, consent logic, event tracking
 robots.txt
