@@ -25,7 +25,7 @@ The page is complete and works, but these things need to arrive before it is fin
 
 1. ~~The GA4 measurement ID.~~ Done: `G-WEJ9S352CD` is in `script.js`. Analytics starts counting once the site is live and visitors press Accept.
 2. ~~Federica's logo.~~ Done: it is in the hero.
-3. ~~Photos of her work.~~ Done: 12 photos are in "My recent fine line tattoos". Click one on the page to see it larger.
+3. ~~Photos of her work.~~ Done: 12 photos are in "My recent work". Click one on the page to see it larger.
 4. ~~Federica's photo for the About section.~~ Done: a tall oval sits on the top edge of the light pink About box (and is not clickable).
 5. **FAQ answers** in `assets/faq.txt`.
 
@@ -60,7 +60,7 @@ Google reads the words on the page to decide which searches it should show the s
 | fine line tattoo artist North London | The page title, the main heading (H1) and the meta description (the grey text under the title on Google) |
 | female tattoo artist London | The first sentence of the About section: "I'm a female tattoo artist in North London" |
 | delicate tattoos / tiny tattoo | The About section ("delicate details", "a tiny tattoo that holds a memory") |
-| fine line tattoo London | The closing heading, "Ready for your fine line tattoo?", and the meta description |
+| fine line tattoo London | The closing heading, "Ready for your tattoo?", and the meta description |
 | Federica Aiello | The About heading, the description and the hidden data Google reads about the page |
 
 Other things that help, all already done: a link to the one official address (the `.co.uk`), a description of every photo, a fast page, a phone-friendly layout, a sitemap, and hidden data saying the site belongs to Pink Rodeo Tattoo Club and to Federica, with her Instagram and TikTok. There is deliberately no address or phone number, so the site is not set up as a local shop listing.

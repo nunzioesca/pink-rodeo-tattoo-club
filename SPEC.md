@@ -25,12 +25,12 @@ Decisions made with the user, overriding the original brief: the palette follows
 2. **Consent banner**: right after the skip link in the page order (so keyboard users meet it first), fixed to the bottom of the screen, minimal, Accept and Decline with equal prominence.
 3. **Hero** `<header>`: Federica's logo image and the `<h1>`. No buttons here (the calls to action are only in the closing section).
 4. **About** `<section>`: a light pink box with her tall oval portrait on its top edge; who she is, since when, what she does.
-5. **My recent fine line tattoos** `<section>`: 12 framed photos (2 per row on phones and tablets, 3 on laptops from 900px, 4 from 1600px; an unfinished last row is centred).
+5. **My recent work** `<section>`: 12 framed photos (2 per row on phones and tablets, 3 on laptops from 900px, 4 from 1600px; an unfinished last row is centred).
 6. *(FAQ: collapsible questions, before the closing section, once Federica's answers arrive.)*
-7. **Ready for your fine line tattoo?** `<section>`: what to send (four bullet points), two buttons, then the Instagram, TikTok and email icons.
+7. **Ready for your tattoo?** `<section>`: what to send (four bullet points), two buttons, then the Instagram, TikTok and email icons.
 8. **Footer** `<footer>` on light pink: copyright, "Cookie choices" button and the privacy notice.
 
-Heading order: h1, then h2 "Hi, I'm Federica Aiello", "My recent fine line tattoos", ("FAQ" when added), "Ready for your fine line tattoo?" and "Privacy".
+Heading order: h1, then h2 "Hi, I'm Federica Aiello", "My recent work", ("FAQ" when added), "Ready for your tattoo?" and "Privacy".
 
 ## 4. Copy (British English, first person as Federica; last revised 12 October 2026)
 
@@ -51,9 +51,9 @@ Heading order: h1, then h2 "Hi, I'm Federica Aiello", "My recent fine line tatto
 
 "Since 2019" was added at the user's request, overriding the original no-years rule.
 
-**My recent fine line tattoos** (h2): 12 photos in frames, in a fixed order (cowboy boot, stars, pumpkin with bow, Luna, boots stamp, butterflies, clock tower, lemon stamp, two stars, four, numbers, forearm script). Clicking a photo opens a larger copy in a viewer (previous and next buttons, arrow keys, Escape or the close button to leave).
+**My recent work** (h2): 12 photos in frames, in a fixed order (cowboy boot, stars, pumpkin with bow, Luna, boots stamp, butterflies, clock tower, lemon stamp, two stars, four, numbers, forearm script). Clicking a photo opens a larger copy in a viewer (previous and next buttons, arrow keys, Escape or the close button to leave).
 
-**Ready for your fine line tattoo?** (h2, the closing section)
+**Ready for your tattoo?** (h2, the closing section)
 > I work by appointment in North London, on Wednesdays, Fridays and Saturdays. To enquire, send me a DM on Instagram with:
 
 Four bullet points on one line (they wrap on narrow phones): Your idea, The placement, The approximate size, A reference picture, if you have one. No box.
