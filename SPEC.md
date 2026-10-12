@@ -34,7 +34,7 @@ Heading order: h1, then h2 "Hi, I'm Federica Aiello", "My recent work", ("FAQ" w
 
 ## 4. Copy (British English, first person as Federica; last revised 12 October 2026)
 
-**Title tag** (49 characters): `Fine Line Tattoo Artist North London | Pink Rodeo`
+**Title tag** (61 characters, 545 px wide in Google's title font, so it is not cut off): `Fine Line Tattoo Artist North London | Pink Rodeo Tattoo Club`
 
 **Meta description** (148 characters): `I'm Federica Aiello, a fine line tattoo artist in North London. Delicate tattoos at Pink Rodeo Tattoo Club, by appointment. Message me on Instagram.`
 
@@ -137,7 +137,8 @@ sitemap.xml
 assets/
   logo/             Federica's logo, cropped square and resized (480px)
   work/             12 photos, each in 640px, 960px and 1400px widths (the 1400px copy opens in the viewer)
-  favicon.svg       small white "PR" on pink, the only file I draw
+  favicon-48/96/192.png, apple-touch-icon.png   the logo as a round icon (what Google shows beside the result)
+favicon.ico         the same icon, at the site root where browsers and Google look first
 README.md           plain-English guide
 SPEC.md             this document
 .gitignore          .DS_Store, editor files, node_modules, originals/
