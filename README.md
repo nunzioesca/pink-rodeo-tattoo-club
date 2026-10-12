@@ -15,7 +15,8 @@ The site is plain files: one page, one stylesheet, one small script. There is no
 | `script.js` | The cookie choice banner and the click counting for Google Analytics. **The GA4 ID goes at the top of this file.** |
 | `robots.txt` | Tells search engines they may visit the site and where the sitemap is. |
 | `sitemap.xml` | The list of pages for Google (there is only one). |
-| `assets/` | `favicon.svg` (the small tab icon), the `logo` folder and the `work` folder with the web-sized photos. |
+| `assets/` | The small round logo icons (`favicon-*.png`, `apple-touch-icon.png`), the `logo` folder, the `about` portrait and the `work` folder with the web-sized photos. |
+| `favicon.ico` | The same logo icon, kept at the top level where browsers and Google look first. |
 | `originals/` | Your full-size photos and logo. **Not published and not saved to GitHub.** See the note on photos below. |
 | `SPEC.md` | The plan we agreed: structure, wording and tracking. |
 
