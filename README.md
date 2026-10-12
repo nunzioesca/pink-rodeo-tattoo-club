@@ -68,6 +68,61 @@ Other things that help, all already done: a link to the one official address (th
 
 Two honest limits: results take weeks to appear after the site goes live, and Search Console (set up below) is where you will see which searches actually bring people.
 
+## Reading your numbers (Search Console and GA4)
+
+The two tools answer two different questions about the same visitor.
+
+| | Search Console (GSC) | GA4 |
+|---|---|---|
+| Question it answers | How do people find the site **on Google**? | What do people do **once they are on the site**? |
+| Where | search.google.com/search-console | analytics.google.com |
+| Delay | About 2 to 3 days | Realtime at once, reports about a day |
+| Counts | Everyone who sees or clicks a Google result | Only visitors who pressed **Accept** on the banner |
+
+The journey is: **seen on Google (impressions) → clicked (clicks) → visited the site → tapped Message me on Instagram (`click_dm`).** Your real goal is the last step.
+
+### Search Console: what to look at
+
+1. **Performance**, then **Search results**. Four numbers sit at the top:
+   - **Total clicks:** people who came from Google to the site.
+   - **Total impressions:** how many times the site was shown, even if nobody clicked.
+   - **Average CTR:** clicks divided by impressions. A few per cent is normal.
+   - **Average position:** where the site appears. 1 to 10 is page one. 11 to 20 is page two.
+2. Scroll down to the table and click **Queries** to see the exact words people searched, and **Pages** to see which page they landed on (there is only one).
+3. **Pages** in the left menu shows whether Google has indexed the site. You want "Indexed". The two notes about `SPEC.md` and `README.md` can be ignored.
+
+### GA4: what to look at
+
+1. **Reports, Realtime:** who is on the site right now. Good for testing.
+2. **Reports, Acquisition, Traffic acquisition:** where visitors come from. Rows to know:
+   - **Organic Search:** found on Google.
+   - **Direct:** typed the address, or clicked a link with no label.
+   - **Social:** came from Instagram or TikTok.
+   - `google / organic` with campaign `gbp`: came from your Google Business Profile link.
+3. **Reports, Engagement, Events:** the list of actions. `click_dm` is the number that matters. `click_instagram_follow` is the second.
+4. **Admin, Data display, Key events** is where `click_dm` and `click_instagram_follow` are marked as goals. They are exact names, so check the spelling.
+
+### The three numbers to watch
+
+1. **Clicks in Search Console:** is Google sending visitors?
+2. **Sessions by source in GA4:** which place sends the best visitors?
+3. **`click_dm` in GA4:** how many people tried to message Federica?
+
+### A 10-minute weekly routine
+
+1. Search Console: look at clicks and impressions for the last 28 days against the 28 before.
+2. Search Console, **Queries:** note any new search words.
+3. GA4, **Traffic acquisition:** which source grew.
+4. GA4, **Events:** how many `click_dm`.
+5. Write the three numbers down. Trends matter more than any single day.
+
+### What is normal in the first weeks
+
+- **Tiny numbers.** A new site often shows a handful of impressions in the first fortnight. Branded searches ("pink rodeo tattoo club") come first. General searches take weeks.
+- **GA4 under-counts.** Only people who press Accept are counted, so the real number of visitors is higher.
+- **Your own visits are in the numbers** until there is real traffic to outweigh them.
+- **Don't change the site in reaction to a few days of data.**
+
 ## A note on photos and privacy
 
 Photos taken on a phone usually carry hidden data: the exact place and time they were taken. Five of Federica's photos had GPS coordinates inside them, and this site is not meant to show a location. So the website only uses copies that have been resized and stripped of all hidden data. Your originals sit in the `originals` folder, which is deliberately left out of GitHub and of the website.
