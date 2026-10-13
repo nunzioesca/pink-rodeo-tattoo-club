@@ -68,6 +68,18 @@ Other things that help, all already done: a link to the one official address (th
 
 Two honest limits: results take weeks to appear after the site goes live, and Search Console (set up below) is where you will see which searches actually bring people.
 
+## Short links for your bios
+
+The three short addresses below send the visitor to the home page and quietly add a label, so GA4 can show where each visit came from. They look clean in a bio, and the visitor never sees the label.
+
+| Where to put it | Use this address | GA4 will show it as |
+|---|---|---|
+| Instagram bio | `pinkrodeotattooclub.co.uk/ig` | `instagram / social` |
+| TikTok bio | `pinkrodeotattooclub.co.uk/tiktok` | `tiktok / social` |
+| Google Business Profile website field | `pinkrodeotattooclub.co.uk/gbp` | `google / organic`, campaign `gbp` |
+
+The pages behind them are small files in the folders `ig`, `tiktok` and `gbp`. They are marked so Google does not index them.
+
 ## Reading your numbers (Search Console and GA4)
 
 The two tools answer two different questions about the same visitor.

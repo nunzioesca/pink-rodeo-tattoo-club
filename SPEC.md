@@ -130,6 +130,7 @@ Details:
 ```
 index.html          the page (inline critical bits: consent default, JSON-LD)
 404.html            branded page for addresses that do not exist (not indexed)
+ig/, tiktok/, gbp/  tiny redirect pages: clean short links for bios that add the GA4 utm tags (not indexed)
 styles.css          design tokens, layout, frames, buttons, banner
 script.js           GA ID block, consent logic, event tracking
 robots.txt
