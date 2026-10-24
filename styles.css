@@ -113,6 +113,61 @@ a { color: inherit; }
   color: var(--rose);
 }
 
+/* With JavaScript the bar shows only a menu button (three lines). Pressing it opens the links
+   in a panel under the bar. Without JavaScript the links simply stay in the bar. */
+.topbar { position: relative; }
+.topbar__inner { display: none; }
+.topbar.is-enhanced .topbar__inner {
+  display: flex;
+  justify-content: flex-end;
+  max-width: 82rem;
+  margin: 0 auto;
+  padding: 0 calc(var(--gutter) - 0.5rem);
+}
+.menu-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 3rem;
+  height: 3rem;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--ink);
+  cursor: pointer;
+}
+.menu-toggle:hover { color: var(--rose); }
+.menu-toggle svg {
+  width: 1.75rem;
+  height: 1.75rem;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+}
+.menu-toggle .i-close,
+.menu-toggle[aria-expanded="true"] .i-open { display: none; }
+.menu-toggle[aria-expanded="true"] .i-close { display: inline; }
+
+.topbar.is-enhanced ul {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  z-index: 15;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+  max-width: none;
+  margin: 0;
+  padding: 0.25rem var(--gutter) 0.75rem;
+  background: var(--blush);
+  border-bottom: 1px solid var(--pink-soft);
+  box-shadow: 0 12px 24px rgba(34, 34, 38, 0.12);
+}
+.topbar.is-open ul { display: flex; }
+
 /* Hero */
 .hero {
   max-width: var(--measure);
@@ -151,11 +206,6 @@ a.logo { display: block; }
   width: 8rem;
   height: 8rem;
   margin-bottom: 1.75rem;
-}
-.faq-intro {
-  max-width: 30rem;
-  margin: 1.25rem auto 0;
-  font-size: 1.125rem;
 }
 
 /* Page not found (404.html) */

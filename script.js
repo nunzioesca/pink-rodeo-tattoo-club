@@ -187,3 +187,36 @@ var GA_MEASUREMENT_ID = 'G-WEJ9S352CD';
     if (event.key === 'ArrowRight') { show(current + 1); preloadNeighbours(); }
   });
 })();
+
+/* Menu: the bar shows a button with three lines; pressing it opens Home and FAQ.
+   Escape, a click elsewhere or choosing a link closes it. Without JavaScript the links stay visible in the bar. */
+(function () {
+  'use strict';
+
+  var nav = document.querySelector('.topbar');
+  var button = document.getElementById('menu-toggle');
+  if (!nav || !button) { return; }
+
+  nav.classList.add('is-enhanced');
+
+  function setOpen(open) {
+    nav.classList.toggle('is-open', open);
+    button.setAttribute('aria-expanded', open ? 'true' : 'false');
+    button.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+  }
+
+  button.addEventListener('click', function () {
+    setOpen(!nav.classList.contains('is-open'));
+  });
+
+  document.addEventListener('click', function (event) {
+    if (!nav.contains(event.target)) { setOpen(false); }
+  });
+
+  nav.addEventListener('keydown', function (event) {
+    if (event.key === 'Escape' && nav.classList.contains('is-open')) {
+      setOpen(false);
+      button.focus();
+    }
+  });
+})();
