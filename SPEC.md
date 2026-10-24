@@ -15,7 +15,7 @@ Federica Aiello is a fine line tattoo artist in North London. The page exists to
 | About text and portrait | Done |
 | GA4 ID `G-WEJ9S352CD` | Done, in `script.js` |
 | Link-preview image | Done, `assets/social-preview.jpg` |
-| FAQ | Waiting for Federica's answers (`assets/faq.txt`) |
+| FAQ | Done (24 October 2026): its own page, `/faq/`, 19 questions chosen from Google "People also ask" and answered by Federica |
 
 Decisions made with the user, overriding the original brief: the palette follows Federica's Instagram (pearl grey and rose); the copy is in first person and may say "female tattoo artist"; the butterflies photo is used; "since 2019" is included; the repository is public. Full-size originals live in `originals/`, which git ignores and the site never publishes (five originals contained GPS coordinates, so they must never be uploaded).
 
@@ -23,14 +23,19 @@ Decisions made with the user, overriding the original brief: the palette follows
 
 1. **Skip link** (visible on focus): "Skip to content".
 2. **Consent banner**: right after the skip link in the page order (so keyboard users meet it first), fixed to the bottom of the screen, minimal, Accept and Decline with equal prominence.
+2b. **Menu bar** (added 24 October 2026): a light pink band, like the footer, with the links Home and FAQ, centred. The current page is in rose with a pink underline. The same bar sits at the top of `/faq/`. Add new pages to both pages' bar and to `sitemap.xml`.
 3. **Hero** `<header>`: Federica's logo image and the `<h1>`. No buttons here (the calls to action are only in the closing section).
 4. **About** `<section>`: a light pink box with her tall oval portrait on its top edge; who she is, since when, what she does.
 5. **My recent work** `<section>`: 12 framed photos (2 per row on phones and tablets, 3 on laptops from 900px, 4 from 1600px; an unfinished last row is centred).
-6. *(FAQ: collapsible questions, before the closing section, once Federica's answers arrive.)*
+6. *(The FAQ is not on this page. It has its own page at `/faq/`, linked from the menu bar and from a short line in the closing section.)*
 7. **Ready for your tattoo?** `<section>`: what to send (four bullet points), two buttons, then the Instagram, TikTok and email icons.
 8. **Footer** `<footer>` on light pink: copyright, "Cookie choices" button and the privacy notice.
 
-Heading order: h1, then h2 "Hi, I'm Federica Aiello", "My recent work", ("FAQ" when added), "Ready for your tattoo?" and "Privacy".
+Heading order: h1, then h2 "Hi, I'm Federica Aiello", "My recent work", "Ready for your tattoo?" and "Privacy".
+
+### FAQ page (`/faq/`, added 24 October 2026)
+
+Title `Fine Line Tattoo FAQ, Cost and Aftercare | Pink Rodeo Tattoo Club`; h1 "Fine line tattoo FAQ"; four h2 topic groups (About fine line tattoos, Booking and cost, Your appointment, Healing and aftercare) with the 19 questions as h3 in light panels, then "Still have a question?" with the two Instagram buttons. Same consent banner, tracking and footer as the home page. Its head holds FAQPage and BreadcrumbList data that repeats the visible answers exactly. Google shows FAQ rich results only for government and health sites, so the data is there for clarity, not for a special result. Rules agreed with Federica: she supplies every answer; prices appear only as "from £60 for 0.5 to 2 cm"; "North London" only; working days "from Tuesday to Saturday" (matches her Google Business Profile; she can book a room on other days but that is not mentioned); touch-up free within 30 days if both agree it is needed, and it does not make the tattoo darker or longer lasting; aftercare is panthenol cream or Vaseline, cling film changed every 24 hours for the first two days, second skin 24 hours then 48 hours.
 
 ## 4. Copy (British English, first person as Federica; last revised 12 October 2026)
 
@@ -54,7 +59,7 @@ Heading order: h1, then h2 "Hi, I'm Federica Aiello", "My recent work", ("FAQ" w
 **My recent work** (h2): 12 photos in frames, in a fixed order (cowboy boot, stars, pumpkin with bow, Luna, boots stamp, butterflies, clock tower, lemon stamp, two stars, four, numbers, forearm script). Clicking a photo opens a larger copy in a viewer (previous and next buttons, arrow keys, Escape or the close button to leave).
 
 **Ready for your tattoo?** (h2, the closing section)
-> I work by appointment in North London, on Wednesdays, Fridays and Saturdays. To enquire, send me a DM on Instagram with:
+> I work by appointment in North London, from Tuesday to Saturday. To enquire, send me a DM on Instagram with:
 
 Four bullet points on one line (they wrap on narrow phones): Your idea, The placement, The approximate size, A reference picture, if you have one. No box.
 
@@ -65,7 +70,8 @@ Four bullet points on one line (they wrap on narrow phones): Your idea, The plac
 Buttons: **Message me on Instagram** and **Follow me on Instagram**. Under them, three round icon buttons: Instagram (Instagram gradient), TikTok (black with its red and cyan edges) and email (rose).
 
 **Footer**
-- One row: © 2026 Pink Rodeo Tattoo Club and the "Cookie choices" button.
+- One row: © 2026 Pink Rodeo Tattoo Club. All rights reserved. and the "Cookie choices" button.
+- **Copyright** (h2, small, runs in with the text; added 24 October 2026): "The photos, designs, words and logo on this site belong to Pink Rodeo Tattoo Club and Federica Aiello. Please do not copy, reuse or repost them without written permission. To ask, message me on Instagram." Federica must confirm she owns the photos (see her note on client consent).
 - **Privacy** (h2, small, runs in with the text):
   > I use Google Analytics to count visits and link clicks, only if you press Accept; until then nothing is sent and no analytics cookies are set. This site has no forms and I collect no names or contact details. Your choice is saved on your device. Google Fonts sees your IP address when the page loads, and my host may keep standard server logs. The Instagram, TikTok and email links go to services with their own privacy policies.
 - Note to you (not on the page): this is plain-English drafting, **not legal advice**.

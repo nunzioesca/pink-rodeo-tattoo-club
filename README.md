@@ -11,10 +11,11 @@ The site is plain files: one page, one stylesheet, one small script. There is no
 | File or folder | What it is |
 |---|---|
 | `index.html` | The page itself: all the words, links and search engine information. |
+| `faq/index.html` | The FAQ page (`/faq/`): 19 questions and answers from Federica. The hidden search engine data (FAQPage) in its head repeats the same answers word for word, so change both together. |
 | `styles.css` | Colours, fonts, spacing, the photo frames and the 3D buttons. |
 | `script.js` | The cookie choice banner and the click counting for Google Analytics. **The GA4 ID goes at the top of this file.** |
 | `robots.txt` | Tells search engines they may visit the site and where the sitemap is. |
-| `sitemap.xml` | The list of pages for Google (there is only one). |
+| `sitemap.xml` | The list of pages for Google (the home page and the FAQ). |
 | `assets/` | The small round logo icons (`favicon-*.png`, `apple-touch-icon.png`), the `logo` folder, the `about` portrait and the `work` folder with the web-sized photos. |
 | `favicon.ico` | The same logo icon, kept at the top level where browsers and Google look first. |
 | `originals/` | Your full-size photos and logo. **Not published and not saved to GitHub.** See the note on photos below. |
@@ -28,7 +29,7 @@ The page is complete and works, but these things need to arrive before it is fin
 2. ~~Federica's logo.~~ Done: it is in the hero.
 3. ~~Photos of her work.~~ Done: 12 photos are in "My recent work". Click one on the page to see it larger.
 4. ~~Federica's photo for the About section.~~ Done: a tall oval sits on the top edge of the light pink About box (and is not clickable).
-5. **FAQ answers** in `assets/faq.txt`.
+5. ~~FAQ answers.~~ Done: Federica's answers are on their own page, `/faq/` (written 24 October 2026). After it goes live, open Search Console, inspect `https://pinkrodeotattooclub.co.uk/faq/` and click **Request indexing**.
 
 When you have any of these, put the files in the right folder and ask Claude to add them. It will write the alt text and wire them in. Tell Claude what each photo shows, in plain words.
 
