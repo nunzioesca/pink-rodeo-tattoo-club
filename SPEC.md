@@ -24,8 +24,8 @@ Decisions made with the user, overriding the original brief: the palette follows
 1. **Skip link** (visible on focus): "Skip to content".
 2. **Consent banner**: right after the skip link in the page order (so keyboard users meet it first), fixed to the bottom of the screen, minimal, Accept and Decline with equal prominence.
 2b. **Menu bar** (added 24 October 2026): a light pink band, like the footer, with a button of three lines at the right. Pressing it opens a panel under the bar with the links Home and FAQ (the current page in rose with a pink underline); Escape, a click elsewhere or the X closes it. Without JavaScript the two links just sit in the bar. The same bar is at the top of `/faq/`. Add new pages to both pages' menu and to `sitemap.xml`.
-3. **Hero** `<header>`: Federica's logo image and the `<h1>`. No buttons here (the calls to action are only in the closing section).
-4. **About** `<section>`: a light pink box with her tall oval portrait on its top edge; who she is, since when, what she does.
+3. **Hero** `<header>`: Federica's logo image and the `<h1>`. No buttons here (the calls to action are under the About box and in the closing section).
+4. **About** `<section>`: a light pink box with her tall oval portrait on its top edge; who she is, since when, what she does. Under the box, the same two buttons as the closing section (Message me on Instagram, Follow me on Instagram), tracked with `data-location="about"` (added 1 November 2026).
 5. **My recent work** `<section>`: 12 framed photos (2 per row on phones and tablets, 3 on laptops from 900px, 4 from 1600px; an unfinished last row is centred).
 6. *(The FAQ is not on this page. It has its own page at `/faq/`, linked from the menu bar and from a short line in the closing section.)*
 7. **Ready for your tattoo?** `<section>`: what to send (four bullet points), two buttons, then the Instagram, TikTok and email icons.
