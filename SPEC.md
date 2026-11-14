@@ -19,23 +19,32 @@ Federica Aiello is a fine line tattoo artist in North London. The page exists to
 
 Decisions made with the user, overriding the original brief: the palette follows Federica's Instagram (pearl grey and rose); the copy is in first person and may say "female tattoo artist"; the butterflies photo is used; "since 2019" is included; the repository is public. Full-size originals live in `originals/`, which git ignores and the site never publishes (five originals contained GPS coordinates, so they must never be uploaded).
 
-## 3. Page structure (single page, `index.html`)
+## 3. Page structure (home page `index.html`; redesigned 14 November 2026)
+
+The redesign takes its layout ideas from primitivearttattoo.it and geniusathleticenter.it while keeping the palette, tone and SEO text. Sections alternate grey and white bands, each title has a small pink label above it (aria-hidden, decorative) with a fine pink "thread" line running down into it, and the sections below the About box fade in gently as they scroll into view (`data-reveal`, skipped for reduced motion and without JavaScript).
 
 1. **Skip link** (visible on focus): "Skip to content".
-2. **Consent banner**: right after the skip link in the page order (so keyboard users meet it first), fixed to the bottom of the screen, minimal, Accept and Decline with equal prominence.
-2b. **Menu bar** (added 24 October 2026): a light pink band, like the footer, with a button of three lines at the right. Pressing it opens a panel under the bar with the links Home and FAQ (the current page in rose with a pink underline); Escape, a click elsewhere or the X closes it. Without JavaScript the two links just sit in the bar. The same bar is at the top of `/faq/`. Add new pages to both pages' menu and to `sitemap.xml`.
-3. **Hero** `<header>`: Federica's logo image and the `<h1>`. No buttons here (the calls to action are under the About box and in the closing section).
-4. **About** `<section>`: a light pink box with her tall oval portrait on its top edge; who she is, since when, what she does. Under the box, the same two buttons as the closing section (Message me on Instagram, Follow me on Instagram), tracked with `data-location="about"` (added 1 November 2026).
-5. **My recent work** `<section>`: 12 framed photos (2 per row on phones and tablets, 3 on laptops from 900px, 4 from 1600px; an unfinished last row is centred).
-6. *(The FAQ is not on this page. It has its own page at `/faq/`, linked from the menu bar and from a short line in the closing section.)*
-7. **Ready for your tattoo?** `<section>`: what to send (four bullet points), two buttons, then the Instagram, TikTok and email icons.
-8. **Footer** `<footer>` on light pink: copyright, "Cookie choices" button and the privacy notice.
+2. **Consent banner**: right after the skip link in the page order, fixed to the bottom of the screen, Accept and Decline with equal prominence.
+3. **Top bar** (sticky): small round logo and "Pink Rodeo Tattoo Club" on the left; Home, Gallery, FAQ and a pink Book button on the right. Below 900px the links fold into a button of three lines. The same bar is on `/gallery/` and `/faq/`. Book goes to `/#book` (on the gallery page it jumps to that page's own booking band). Add new pages to every menu and to `sitemap.xml`.
+4. **Hero** `<header>`: pink kicker "Pink Rodeo Tattoo Club · North London", the `<h1>`, one lead line, and the cowboy-boot photo in the star frame on the right (stacked on phones). No buttons here.
+5. **Fact strip**: white band with Tattooing since 2019, North London, Tuesday to Saturday, By appointment (pink stars between them; two pairs on phones).
+6. **About** `<section>`: light pink box with Federica's photo in the star frame and the label "About me"; side by side from 900px (photo left, text left-aligned), photo above the text on phones. Under the box: Message me on Instagram and Follow me on Instagram buttons (`data-location="about"`).
+7. **My recent work** on a white band (label "Portfolio"): one row of 8 photos that scrolls sideways (1.2 visible on phones, 2 from 600px, 3 from 900px, 4 from 1400px), arrow buttons, a "See the full gallery" end card and button. Photos open in the viewer.
+8. **Your questions** (label "Good to know"): 4 questions copied word for word from the FAQ page, as tap-to-open panels, then "See all questions" to `/faq/`.
+9. **Ready for your tattoo?** on a white band (label "Booking", `id="book"`): what to send, then the standard call to action.
+10. **Footer**: copyright line with "Cookie choices", then the Copyright and Privacy notes. No columns.
 
-Heading order: h1, then h2 "Hi, I'm Federica Aiello", "My recent work", "Ready for your tattoo?" and "Privacy".
+**Standard call to action** (end of home, gallery and FAQ pages): the pink "Message me on Instagram" button, then round Instagram, TikTok and email icons. The round icons appear only at the end of a page.
+
+Heading order: h1, then h2 "Hi, I'm Federica Aiello", "My recent work", "Your questions", "Ready for your tattoo?", "Copyright" and "Privacy".
+
+### Gallery page (`/gallery/`, added 14 November 2026)
+
+Title `Fine Line Tattoo Gallery | Pink Rodeo Tattoo Club`; h1 "Fine line tattoo gallery"; all 12 photos in the framed grid, opening in the viewer; then the "Ready for your tattoo?" band with the standard call to action (`data-location="gallery"`). Head holds ImageGallery (12 ImageObjects, creator Federica) and BreadcrumbList data.
 
 ### FAQ page (`/faq/`, added 24 October 2026)
 
-Title `Fine Line Tattoo FAQ, Cost and Aftercare | Pink Rodeo Tattoo Club`; h1 "Fine line tattoo FAQ" (no intro text under it; keywords live in the answers); four h2 topic groups (About fine line tattoos, Booking and cost, Your appointment, Healing and aftercare) with the 19 questions as h3 in light panels, then "Still have a question?" with the two Instagram buttons. Same consent banner, tracking and footer as the home page. Its head holds FAQPage and BreadcrumbList data that repeats the visible answers exactly. Google shows FAQ rich results only for government and health sites, so the data is there for clarity, not for a special result. Rules agreed with Federica: she supplies every answer; prices appear only as "from £60 for 0.5 to 2 cm"; "North London" only; working days "from Tuesday to Saturday" (matches her Google Business Profile; she can book a room on other days but that is not mentioned); touch-up free within 30 days if both agree it is needed, and it does not make the tattoo darker or longer lasting; aftercare is panthenol cream or Vaseline, cling film for the first 24 hours only, washed and re-wrapped in fresh cling film each time the tattoo is washed, second skin 24 hours then 48 hours.
+Title `Fine Line Tattoo FAQ, Cost and Aftercare | Pink Rodeo Tattoo Club`; h1 "Fine line tattoo FAQ" (no intro text under it; keywords live in the answers); four h2 topic groups (About fine line tattoos, Booking and cost, Your appointment, Healing and aftercare) with the 19 questions as h3 in light panels, then "Still have a question?" (label "Get in touch") with the standard call to action. The answer "Where can I see your work?" links to `/gallery/`. Same consent banner, tracking and footer as the home page. Its head holds FAQPage and BreadcrumbList data that repeats the visible answers exactly. Google shows FAQ rich results only for government and health sites, so the data is there for clarity, not for a special result. Rules agreed with Federica: she supplies every answer; prices appear only as "from £60 for 0.5 to 2 cm"; "North London" only; working days "from Tuesday to Saturday" (matches her Google Business Profile; she can book a room on other days but that is not mentioned); touch-up free within 30 days if both agree it is needed, and it does not make the tattoo darker or longer lasting; aftercare is panthenol cream or Vaseline, cling film for the first 24 hours only, washed and re-wrapped in fresh cling film each time the tattoo is washed, second skin 24 hours then 48 hours.
 
 ## 4. Copy (British English, first person as Federica; last revised 12 October 2026)
 
@@ -100,8 +109,8 @@ Details:
 - **Buttons (3D):** a lit top edge, a solid lip underneath and a soft shadow, so they look pressable; on press they sink onto the lip. Primary: pink gradient (`#F47FB2` to `#E8639C`) with charcoal text (at least 5:1 contrast) and a deep-pink lip. Secondary: white-to-pale-grey face with a silver outline and silver lip. A tiny movement on hover and press, switched off for visitors who prefer reduced motion.
 - **Logo:** Federica's logo file in a round crop with a soft static pink halo (no flicker).
 - **Fonts:** headings use **Didot** (Federica's choice). Didot is a licensed font that is built into Macs, iPhones and iPads, so it shows there with no download. Everyone else gets **Bodoni Moda 400 and 700**, a free lookalike from Google Fonts (downloaded only when Didot is missing). Body text is Jost 400 and 500. One Google Fonts request with `display=swap`, `preconnect`, loaded without blocking the first paint. Showing the real Didot on every device would need a purchased web font licence.
-- **Footer:** full-width strip in light pink (`--blush`, `#FBEAF2`). Social links and the copyright on one row, then the privacy notice across the whole page width in small type. On a laptop or desktop screen that is about two lines; on a phone it necessarily wraps more.
-- **About:** at the top under the H1, in a light pink box (`--blush`, thin `--pink-soft` border, rounded corners). Federica's portrait is a tall oval (4:5) sitting centred on the top edge of the box, in a logo-pink ring with a thin light pink outer ring. The oval shows her from the head to the chest, which a circle could not do with a tall photo. It is not a link and never opens in the photo viewer. It is a 480x600 crop of her portrait with all hidden data removed (`assets/about/federica-oval-480.jpg`); the original stays in `originals/logo/`.
+- **Footer:** full-width strip in light pink (`--blush`, `#FBEAF2`): the copyright line with "Cookie choices", then the Copyright and Privacy notes in small type. Social links live in the standard call to action, not in the footer.
+- **About:** a light pink box (`--blush`, thin `--pink-soft` border, rounded corners) with Federica's portrait (`assets/about/federica-oval-480.jpg`, 480x600, hidden data removed; the original stays in `originals/`) in the star frame, cropped 4:5. It is not a link and never opens in the photo viewer.
 - Mobile first at 375px, buttons at least 48px tall, visible 3px rose focus rings, `prefers-reduced-motion` respected.
 
 ## 6. SEO
@@ -124,21 +133,28 @@ Details:
 
 | Event name | Element | Extra data (`data-location`) |
 |---|---|---|
-| `click_dm` | "Message me on Instagram" button (closing section) | `booking` |
-| `click_instagram_follow` | "Follow me on Instagram" button and the Instagram icon under the closing buttons | `booking`, `icons` |
-| `click_email` | email icon under the closing buttons | `icons` |
-| `click_tiktok` | TikTok icon under the closing buttons | `icons` |
+| `click_dm` | "Message me on Instagram" button | `about`, `booking`, `gallery`, `faq` |
+| `click_instagram_follow` | "Follow me on Instagram" button and the round Instagram icon; inline link in the FAQ answer | `about`, `booking`, `gallery`, `faq`, `faq-work` |
+| `click_email` | round email icon | `booking`, `gallery`, `faq` |
+| `click_tiktok` | round TikTok icon | `booking`, `gallery`, `faq` |
+| `click_gallery` | Gallery menu link, carousel end card, "See the full gallery" button, FAQ answer link | `menu`, `carousel`, `work`, `faq-work` |
+| `click_faq` | FAQ menu link, "See all questions" on the home page | `menu`, `home-faq` |
+| `click_book` | Book button in the top bar | `menu` |
+
+Before 14 November 2026 the round icons used `data-location="icons"`; that value is retired.
 
 - Events fire only when consent is granted. All external links open in a new tab with `rel="noopener noreferrer"`, so the visitor keeps the page open.
 
 ## 8. Files
 
 ```
-index.html          the page (inline critical bits: consent default, JSON-LD)
+index.html          the home page (inline critical bits: consent default, JSON-LD)
+gallery/index.html  the full gallery page
+faq/index.html      the FAQ page
 404.html            branded page for addresses that do not exist (not indexed)
 ig/, tiktok/, gbp/  tiny redirect pages: clean short links for bios that add the GA4 utm tags (not indexed)
 styles.css          design tokens, layout, frames, buttons, banner
-script.js           GA ID block, consent logic, event tracking
+script.js           GA ID block, consent logic, event tracking, photo viewer, menu, gallery row arrows, fade-in
 robots.txt
 sitemap.xml
 assets/

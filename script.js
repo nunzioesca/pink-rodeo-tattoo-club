@@ -188,7 +188,7 @@ var GA_MEASUREMENT_ID = 'G-WEJ9S352CD';
   });
 })();
 
-/* Menu: the bar shows a button with three lines; pressing it opens Home and FAQ.
+/* Menu: on phones the bar shows a button with three lines; pressing it opens the page links.
    Escape, a click elsewhere or choosing a link closes it. Without JavaScript the links stay visible in the bar. */
 (function () {
   'use strict';
@@ -213,10 +213,77 @@ var GA_MEASUREMENT_ID = 'G-WEJ9S352CD';
     if (!nav.contains(event.target)) { setOpen(false); }
   });
 
+  // Choosing a link (for example Book, which jumps down the same page) closes the panel
+  nav.querySelectorAll('ul a').forEach(function (link) {
+    link.addEventListener('click', function () { setOpen(false); });
+  });
+
   nav.addEventListener('keydown', function (event) {
     if (event.key === 'Escape' && nav.classList.contains('is-open')) {
       setOpen(false);
       button.focus();
     }
   });
+})();
+
+/* Gallery row on the home page: the arrow buttons scroll it by one photo.
+   Swiping or scrolling sideways works on its own; the buttons fade out at each end.
+   Without JavaScript the buttons stay hidden and the row can still be swiped. */
+(function () {
+  'use strict';
+
+  var track = document.getElementById('carousel');
+  var prev = document.querySelector('[data-carousel-prev]');
+  var next = document.querySelector('[data-carousel-next]');
+  if (!track || !prev || !next) { return; }
+
+  prev.hidden = false;
+  next.hidden = false;
+
+  function step() {
+    var item = track.querySelector('li');
+    var gap = parseFloat(getComputedStyle(track).columnGap) || 0;
+    return item ? item.getBoundingClientRect().width + gap : track.clientWidth;
+  }
+
+  function update() {
+    var max = track.scrollWidth - track.clientWidth - 2;
+    prev.disabled = track.scrollLeft <= 2;
+    next.disabled = track.scrollLeft >= max;
+  }
+
+  prev.addEventListener('click', function () { track.scrollBy({ left: -step(), behavior: 'smooth' }); });
+  next.addEventListener('click', function () { track.scrollBy({ left: step(), behavior: 'smooth' }); });
+  track.addEventListener('scroll', update, { passive: true });
+  window.addEventListener('resize', update);
+
+  // Arrow keys move the row when a photo in it has keyboard focus
+  track.addEventListener('keydown', function (event) {
+    if (event.key === 'ArrowLeft') { event.preventDefault(); prev.click(); }
+    if (event.key === 'ArrowRight') { event.preventDefault(); next.click(); }
+  });
+
+  update();
+})();
+
+/* Gentle fade-in: sections marked data-reveal slide up softly the first time they come into view.
+   Skipped when the visitor's device asks for reduced motion, or when the browser is too old. */
+(function () {
+  'use strict';
+
+  var items = document.querySelectorAll('[data-reveal]');
+  if (!items.length || !('IntersectionObserver' in window)) { return; }
+  if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) { return; }
+
+  document.documentElement.classList.add('reveal-ready');
+
+  var observer = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (!entry.isIntersecting) { return; }
+      entry.target.classList.add('is-visible');
+      observer.unobserve(entry.target);
+    });
+  }, { rootMargin: '0px 0px -8% 0px', threshold: 0.05 });
+
+  Array.prototype.forEach.call(items, function (item) { observer.observe(item); });
 })();
