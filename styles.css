@@ -376,7 +376,35 @@ a.logo { display: block; }
   border: 1px solid var(--pink-soft);
   border-radius: 0.5rem;
 }
-.about-box .about-split__photo { width: min(100%, 15rem); margin: 0 auto 1.5rem; }   /* beats .frame--photo { margin: 0 } */
+/* Federica's photo: a small oval in a pink ring, with two little pink stars beside it.
+   Small on phones, a little larger on tablets, beside the words from 900px. */
+.about-split__photo {
+  position: relative;
+  width: 7.5rem;
+  margin: 0.5rem auto 1.5rem;
+}
+.about-split__photo img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  border: 3px solid var(--pink);
+  border-radius: 50%;
+  background: var(--white);
+  box-shadow: 0 0 0 4px var(--white), 0 0 0 5px var(--pink-soft);
+}
+.about-split__photo::before,
+.about-split__photo::after {
+  content: "";
+  position: absolute;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 14 14'%3E%3Cpath d='M7 0L9.2 4.8 14 7 9.2 9.2 7 14 4.8 9.2 0 7 4.8 4.8Z' fill='%23C42E73'/%3E%3C/svg%3E") center / contain no-repeat;
+}
+.about-split__photo::before { top: 0; right: -0.625rem; width: 1rem; height: 1rem; }
+.about-split__photo::after { bottom: 0.5rem; left: -0.625rem; width: 0.75rem; height: 0.75rem; }
+@media (min-width: 600px) {
+  .about-split__photo { width: 9rem; }
+}
 .about-box .kicker::before { display: none; }   /* no thread inside the box */
 .about-box h2::after { display: none; }
 .about-box h2 {
@@ -1067,13 +1095,15 @@ body:has(.consent:not([hidden])) .footer__inner { padding-bottom: 11rem; }
 @media (min-width: 900px) {
   .about-split {
     display: grid;
-    grid-template-columns: 19rem 1fr;
+    grid-template-columns: 14rem 1fr;
     gap: 3rem;
     align-items: center;
     padding: 2.75rem;
     text-align: left;
   }
-  .about-box .about-split__photo { width: 100%; margin: 0; }
+  .about-split__photo { width: 13rem; margin: 0 auto; }
+  .about-split__photo::before { top: 0.25rem; right: -0.5rem; width: 1.25rem; height: 1.25rem; }
+  .about-split__photo::after { bottom: 0.75rem; width: 0.875rem; height: 0.875rem; }
   .hero--home {
     grid-template-columns: 1.2fr 1fr;
     gap: 3.5rem;
