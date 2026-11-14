@@ -8,18 +8,20 @@ Website for Pink Rodeo Tattoo Club, the fine line tattoo brand of Federica Aiell
 
 ## About
 
-The site has one job: to turn a visit into a message to Federica on Instagram. It is a fast, accessible, mobile-first site with two pages and no build step.
+The site has one job: to turn a visit into a message to Federica on Instagram. It is a fast, accessible, mobile-first site with three pages and no build step.
 
-- **Home** (`/`): introduction, recent work in a photo viewer, and calls to action.
+- **Home** (`/`): introduction, About, a sideways row of recent work, a few short questions and the booking details.
+- **Gallery** (`/gallery/`): all the tattoo photos, each opening larger in a photo viewer.
 - **FAQ** (`/faq/`): 19 questions and answers written by Federica, grouped by topic.
 
 ## Features
 
-- Responsive layout designed for phones first, with a retractable menu.
+- Responsive layout designed for phones first, with a sticky top bar that folds into a menu on phones.
 - Accessible markup: semantic headings, keyboard-friendly controls, descriptive alt text and visible focus states.
 - Consent-first analytics: Google Analytics 4 with Consent Mode v2. Nothing is measured until the visitor presses Accept, and the choice can be changed from the footer.
-- Click tracking on the main calls to action (`click_dm`, `click_instagram_follow`, `click_faq`, `click_email`, `click_tiktok`).
-- Search-ready: structured data (WebSite, Organization, Person, FAQPage, BreadcrumbList), sitemap, canonical URLs, social preview image.
+- Click tracking on the main calls to action (`click_dm`, `click_instagram_follow`, `click_faq`, `click_gallery`, `click_book`, `click_email`, `click_tiktok`).
+- Search-ready: structured data (WebSite, Organization, Person, ImageGallery, FAQPage, BreadcrumbList), sitemap, canonical URLs, social preview image.
+- Fast images: every photo in WebP with a JPEG fallback, in three sizes. Lighthouse scores 98 to 100 on phones and computers.
 - Short redirect links (`/ig`, `/tiktok`, `/gbp`) that add campaign labels for use in social bios and the Google Business Profile.
 
 ## Tech
@@ -31,9 +33,10 @@ Plain HTML, CSS and a small amount of JavaScript. No frameworks, no dependencies
 | Path | Purpose |
 |---|---|
 | `index.html` | Home page, including its structured data |
+| `gallery/index.html` | Gallery page and its ImageGallery structured data |
 | `faq/index.html` | FAQ page and its FAQPage structured data |
 | `styles.css` | All styles and design tokens (colours, fonts) |
-| `script.js` | Consent banner, analytics loading and click tracking |
+| `script.js` | Consent banner, analytics loading, click tracking, photo viewer, menu, gallery row and fade-in |
 | `assets/` | Web-sized images, logo and favicon files |
 | `404.html` | Branded not-found page |
 | `ig/`, `tiktok/`, `gbp/` | Redirect pages for bio links (not indexed) |
