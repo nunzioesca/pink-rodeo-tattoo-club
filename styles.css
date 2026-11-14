@@ -424,6 +424,7 @@ a.logo { display: block; }
   min-width: 0;
 }
 .frame--photo { margin: 0; }
+picture { display: block; }   /* wrapper that offers the WebP copy first, JPEG as fallback */
 .frame--photo img {
   display: block;
   width: 100%;

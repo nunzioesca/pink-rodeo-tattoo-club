@@ -119,7 +119,7 @@ Details:
 - Open Graph (`og:type website`, title, description, url, site name, locale `en_GB`, image) and Twitter tags (`summary_large_image`). The 1200x630 share image is `assets/social-preview.jpg`: the logo on pearl grey with the h1 line.
 - JSON-LD `@graph` with **WebSite** (name "Pink Rodeo Tattoo Club", alternateName "Pink Rodeo"; helps Google show the brand as the site name), **Organization** (Pink Rodeo Tattoo Club, url, email, sameAs Instagram and TikTok) and **Person** (Federica Aiello, jobTitle "Tattoo artist", worksFor the Organization, sameAs Instagram and TikTok). No address, no LocalBusiness type. Organization `logo` added when a logo exists.
 - Search phrases worked in naturally: fine line tattoo artist North London (title, description, h1), female tattoo artist (first sentence of About), delicate tattoos and tiny tattoo (About), fine line tattoo London (closing heading and description). See "How the search words work" in README.md.
-- Images: width, height, descriptive alt, `loading="lazy"` below the fold, WebP where `sips` can make it (I will test). Nothing to apply yet.
+- Images: width, height, descriptive alt, `loading="lazy"` below the fold, every photo also as WebP (about 70% smaller, made with Chrome's encoder at quality 0.8 since `sips` cannot write WebP), offered first through `<picture>` with the JPEG as fallback; the viewer opens the 1400px WebP. Added 14 November 2026: phone speed on the home page went from 86–88 to 98 in Lighthouse. A new photo needs the three JPEG widths plus a WebP copy of each.
 - `robots.txt`: allow all, link to sitemap. `sitemap.xml`: the one URL `https://pinkrodeotattooclub.co.uk/` with today's date.
 
 ## 7. Analytics and consent
@@ -159,7 +159,8 @@ robots.txt
 sitemap.xml
 assets/
   logo/             Federica's logo, cropped square and resized (480px)
-  work/             12 photos, each in 640px, 960px and 1400px widths (the 1400px copy opens in the viewer)
+  work/             12 photos, each in 640px, 960px and 1400px widths, as JPEG and WebP (the 1400px WebP opens in the viewer)
+  about/            Federica's portrait, 480x600, JPEG and WebP
   favicon-48/96/192.png, apple-touch-icon.png   the logo as a round icon (what Google shows beside the result)
 favicon.ico         the same icon, at the site root where browsers and Google look first
 README.md           plain-English guide
