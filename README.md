@@ -17,10 +17,11 @@ The site has one job: to turn a visit into a message to Federica on Instagram. I
 ## Features
 
 - Responsive layout designed for phones first, with a sticky top bar that folds into a menu on phones.
+- A floating "Message me on Instagram" button on phones that appears while visitors read and steps aside when another one is on screen.
 - Accessible markup: semantic headings, keyboard-friendly controls, descriptive alt text and visible focus states.
 - Consent-first analytics: Google Analytics 4 with Consent Mode v2. Nothing is measured until the visitor presses Accept, and the choice can be changed from the footer.
 - Click tracking on the main calls to action (`click_dm`, `click_instagram_follow`, `click_faq`, `click_gallery`, `click_book`, `click_email`, `click_tiktok`).
-- Search-ready: structured data (WebSite, Organization, Person, ImageGallery, FAQPage, BreadcrumbList), sitemap, canonical URLs, social preview image.
+- Search-ready: structured data (WebSite, Organization, Person, ImageGallery with licence and credit details, FAQPage, BreadcrumbList), sitemap, canonical URLs, social preview image.
 - Fast images: every photo in WebP with a JPEG fallback, in three sizes. Lighthouse scores 98 to 100 on phones and computers.
 - Short redirect links (`/ig`, `/tiktok`, `/gbp`) that add campaign labels for use in social bios and the Google Business Profile.
 
