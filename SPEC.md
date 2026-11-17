@@ -34,6 +34,8 @@ The redesign takes its layout ideas from primitivearttattoo.it and geniusathleti
 9. **Ready for your tattoo?** on a white band (label "Booking", `id="book"`): what to send, then the standard call to action.
 10. **Footer**: copyright line with "Cookie choices", then the Copyright and Privacy notes. No columns.
 
+**Phone DM bar** (added 17 November 2026, below 900px only, on all three pages): a white bar fixed to the bottom of the screen with the pink "Message me on Instagram" button (`data-location="sticky"`). It slides up once the hero has scrolled away and hides while any other DM button, the footer or the cookie banner is on screen. Without JavaScript it never shows.
+
 **Standard call to action** (end of home, gallery and FAQ pages): the pink "Message me on Instagram" button, then round Instagram, TikTok and email icons. The round icons appear only at the end of a page.
 
 Heading order: h1, then h2 "Hi, I'm Federica Aiello", "My recent work", "Your questions", "Ready for your tattoo?", "Copyright" and "Privacy".
@@ -133,7 +135,7 @@ Details:
 
 | Event name | Element | Extra data (`data-location`) |
 |---|---|---|
-| `click_dm` | "Message me on Instagram" button | `about`, `booking`, `gallery`, `faq` |
+| `click_dm` | "Message me on Instagram" button | `about`, `booking`, `gallery`, `faq`, `sticky` (phone bar) |
 | `click_instagram_follow` | "Follow me on Instagram" button and the round Instagram icon; inline link in the FAQ answer | `about`, `booking`, `gallery`, `faq`, `faq-work` |
 | `click_email` | round email icon | `booking`, `gallery`, `faq` |
 | `click_tiktok` | round TikTok icon | `booking`, `gallery`, `faq` |

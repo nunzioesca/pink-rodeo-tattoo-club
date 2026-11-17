@@ -1119,6 +1119,33 @@ body:has(.consent:not([hidden])) .footer__inner { padding-bottom: 11rem; }
   .carousel { --per-view: 4; }
 }
 
+/* Phones only: a "Message me on Instagram" bar that slides up from the bottom of the screen.
+   script.js shows it after the top section, and hides it whenever another DM button,
+   the footer or the cookie banner is on screen. Without JavaScript it never appears. */
+.sticky-dm {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 11;
+  padding: 0.75rem var(--gutter) 1rem;
+  background: rgba(255, 255, 255, 0.94);
+  border-top: 1px solid var(--pink-soft);
+  box-shadow: 0 -6px 18px rgba(34, 34, 38, 0.08);
+  transform: translateY(110%);
+  visibility: hidden;
+  transition: transform 250ms ease-out, visibility 0s linear 250ms;
+}
+.sticky-dm.is-shown {
+  transform: none;
+  visibility: visible;
+  transition: transform 250ms ease-out, visibility 0s;
+}
+.sticky-dm .btn { width: 100%; }
+@media (min-width: 900px) {
+  .sticky-dm { display: none; }
+}
+
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   *, *::before, *::after {

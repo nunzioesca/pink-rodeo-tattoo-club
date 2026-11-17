@@ -287,3 +287,47 @@ var GA_MEASUREMENT_ID = 'G-WEJ9S352CD';
 
   Array.prototype.forEach.call(items, function (item) { observer.observe(item); });
 })();
+
+/* Phones: the "Message me on Instagram" bar at the bottom of the screen.
+   It appears once the top section has scrolled away, and steps aside while another
+   DM button, the footer or the cookie banner is visible, so there is never a double. */
+(function () {
+  'use strict';
+
+  var bar = document.getElementById('sticky-dm');
+  var hero = document.querySelector('.hero');
+  var banner = document.getElementById('consent');
+  if (!bar || !hero || !('IntersectionObserver' in window)) { return; }
+
+  var others = Array.prototype.filter.call(
+    document.querySelectorAll('[data-event="click_dm"], .footer'),
+    function (el) { return !bar.contains(el); }
+  );
+  var heroVisible = true;
+  var visibleOthers = 0;
+
+  function update() {
+    var show = !heroVisible && visibleOthers === 0 && (!banner || banner.hidden);
+    bar.classList.toggle('is-shown', show);
+  }
+
+  new IntersectionObserver(function (entries) {
+    heroVisible = entries[0].isIntersecting;
+    update();
+  }).observe(hero);
+
+  var seen = new Set();
+  var othersObserver = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting) { seen.add(entry.target); } else { seen.delete(entry.target); }
+    });
+    visibleOthers = seen.size;
+    update();
+  });
+  others.forEach(function (el) { othersObserver.observe(el); });
+
+  // Re-check when the cookie banner opens or closes
+  if (banner && 'MutationObserver' in window) {
+    new MutationObserver(update).observe(banner, { attributes: true, attributeFilter: ['hidden'] });
+  }
+})();
