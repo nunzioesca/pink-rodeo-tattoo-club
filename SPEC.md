@@ -34,7 +34,7 @@ The redesign takes its layout ideas from primitivearttattoo.it and geniusathleti
 9. **Ready for your tattoo?** on a white band (label "Booking", `id="book"`): what to send, then the standard call to action.
 10. **Footer**: copyright line with "Cookie choices", then the Copyright and Privacy notes. No columns.
 
-**Phone DM bar** (added 17 November 2026, below 900px only, on all three pages): a white bar fixed to the bottom of the screen with the pink "Message me on Instagram" button (`data-location="sticky"`). It slides up once the hero has scrolled away and hides while any other DM button, the footer or the cookie banner is on screen. Without JavaScript it never shows.
+**Phone DM button** (added 17 November 2026, below 900px only, on all three pages): the pink "Message me on Instagram" button floating on its own near the bottom of the screen (no bar behind it since 17 November; taps beside it reach the page) (`data-location="sticky"`). It slides up once the hero has scrolled away and hides while any other DM button, the footer or the cookie banner is on screen. Without JavaScript it never shows.
 
 **Standard call to action** (end of home, gallery and FAQ pages): the pink "Message me on Instagram" button, then round Instagram, TikTok and email icons. The round icons appear only at the end of a page.
 
